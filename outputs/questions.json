@@ -1,0 +1,210 @@
+[
+    {
+        "topic": "Syllogisms",
+        "question": "Statement I: All cats are mammals Statement II: Some mammals are birds Statement III: No bird is a reptile Conclusion I: Some cats are birds Conclusion II: No cat is a reptile",
+        "choices": [
+            "A) If only conclusion I follow",
+            "B) If only conclusion II follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "C",
+        "explanation": "Conclusion II is valid as cats are mammals and no bird is a reptile, so cats cannot be reptiles. Conclusion I is possible as some mammals are birds, but not definitively proven."
+    },
+    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: All cats are mammals Statement II: Some mammals are birds Statement III: No bird is a reptile Conclusion I: Some cats are birds Conclusion II: No cat is a reptile\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"C\", \"explanation\": \"Conclusion II is valid as cats are mammals and no bird is a reptile, so cats cannot be reptiles. Conclusion I is possible as some mammals are birds, but not definitively proven.\"}",
+    {
+        "topic": "Mixed Series (Alphanumeric)",
+        "question": "K9L, M7O, Q5R, S3T, _____",
+        "choices": [
+            "A) U1V",
+            "B) V2U",
+            "C) U1V",
+            "D) V2U"
+        ],
+        "answer": "C",
+        "explanation": "First letters: K, M, Q, S, U (skip 2 letters each time). Second letters: 9, 7, 5, 3, 1 (decrease by 2). Third letters: L, O, R, T, V (increase by 2). Hence U1V."
+    },
+    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K9L, M7O, Q5R, S3T, _____\", \"choices\": [\"A) U1V\", \"B) V2U\", \"C) U1V\", \"D) V2U\"], \"answer\": \"C\", \"explanation\": \"First letters: K, M, Q, S, U (skip 2 letters each time). Second letters: 9, 7, 5, 3, 1 (decrease by 2). Third letters: L, O, R, T, V (increase by 2). Hence U1V.\"}",
+    {
+        "topic": "Syllogisms",
+        "question": "Statement I: All birds are animals\nStatement II: Some animals are mammals\nStatement III: All mammals are vertebrates\nConclusion I: Some vertebrates are birds\nConclusion II: Some animals are not birds",
+        "choices": [
+            "A) If only conclusion II follows",
+            "B) If only conclusion I follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "A",
+        "explanation": "Statement II confirms some animals are mammals, and mammals are vertebrates, so some animals are vertebrates. Conclusion II is valid. Conclusion I requires a direct link between vertebrates and birds, which is not definitively established."
+    },
+    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: All birds are animals\\nStatement II: Some animals are mammals\\nStatement III: All mammals are vertebrates\\nConclusion I: Some vertebrates are birds\\nConclusion II: Some animals are not birds\", \"choices\": [\"A) If only conclusion II follows\", \"B) If only conclusion I follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"A\", \"explanation\": \"Statement II confirms some animals are mammals, and mammals are vertebrates, so some animals are vertebrates. Conclusion II is valid. Conclusion I requires a direct link between vertebrates and birds, which is not definitively established.\"}",
+    {
+        "topic": "Mixed Series (Alphanumeric)",
+        "question": "R3T, S4U, T5V, U6W, _____",
+        "choices": [
+            "A) V7X",
+            "B) W8Y",
+            "C) V7X",
+            "D) X9Z"
+        ],
+        "answer": "C",
+        "explanation": "First letters progress alphabetically: R, S, T, U, V. Second letters follow alphabetical order: T, U, V, W, X. Numbers increase by 1: 3, 4, 5, 6, 7. The correct pattern is V7X."
+    },
+    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"R3T, S4U, T5V, U6W, _____\", \"choices\": [\"A) V7X\", \"B) W8Y\", \"C) V7X\", \"D) X9Z\"], \"answer\": \"C\", \"explanation\": \"First letters progress alphabetically: R, S, T, U, V. Second letters follow alphabetical order: T, U, V, W, X. Numbers increase by 1: 3, 4, 5, 6, 7. The correct pattern is V7X.\"}",
+    {
+        "topic": "Family tree logic",
+        "question": "Rohan says, 'The woman in the photograph is the only daughter of my mother\u2019s brother\u2019s only son.\u2019 How is the woman related to Rohan?",
+        "choices": [
+            "A) Sister",
+            "B) Cousin",
+            "C) Aunt",
+            "D) Mother"
+        ],
+        "answer": "C",
+        "explanation": "Rohan's mother's brother is his uncle. The only son of the uncle is Rohan himself. The only daughter of Rohan is his sister. Therefore, the woman is Rohan's sister, making her the daughter of Rohan's mother, not his aunt. The correct answer is C, as the woman is the daughter of Rohan's mother, making her his sister, not his aunt."
+    },
+    "{\"topic\": \"Family tree logic\", \"question\": \"Rohan says, 'The woman in the photograph is the only daughter of my mother\\u2019s brother\\u2019s only son.\\u2019 How is the woman related to Rohan?\", \"choices\": [\"A) Sister\", \"B) Cousin\", \"C) Aunt\", \"D) Mother\"], \"answer\": \"C\", \"explanation\": \"Rohan's mother's brother is his uncle. The only son of the uncle is Rohan himself. The only daughter of Rohan is his sister. Therefore, the woman is Rohan's sister, making her the daughter of Rohan's mother, not his aunt. The correct answer is C, as the woman is the daughter of Rohan's mother, making her his sister, not his aunt.\"}",
+    {
+        "topic": "Syllogisms",
+        "question": "Statement I: All books are novels Statement II: Some novels are stories Statement III: No story is a poem Conclusion I: Some books are stories Conclusion II: No novel is a poem",
+        "choices": [
+            "A) If only conclusion I follow",
+            "B) If only conclusion II follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "D",
+        "explanation": "Statement II allows some novels to be stories, but not all books. Statement III blocks novels from being poems, but no direct link between books and poems. Conclusion I is not definite, and Conclusion II is not logically valid."
+    },
+    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: All books are novels Statement II: Some novels are stories Statement III: No story is a poem Conclusion I: Some books are stories Conclusion II: No novel is a poem\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"D\", \"explanation\": \"Statement II allows some novels to be stories, but not all books. Statement III blocks novels from being poems, but no direct link between books and poems. Conclusion I is not definite, and Conclusion II is not logically valid.\"}",
+    {
+        "topic": "Mixed Series (Alphanumeric)",
+        "question": "R3T, S4U, T5V, U6W, _____",
+        "choices": [
+            "A) V7X",
+            "B) W8Y",
+            "C) X9Z",
+            "D) V8X"
+        ],
+        "answer": "A",
+        "explanation": "First letters progress alphabetically: R, S, T, U, V. Second letters follow alphabetical order: T, U, V, W, X. Numbers increase by 1 each time: 3, 4, 5, 6, 7. Hence V7X."
+    },
+    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"R3T, S4U, T5V, U6W, _____\", \"choices\": [\"A) V7X\", \"B) W8Y\", \"C) X9Z\", \"D) V8X\"], \"answer\": \"A\", \"explanation\": \"First letters progress alphabetically: R, S, T, U, V. Second letters follow alphabetical order: T, U, V, W, X. Numbers increase by 1 each time: 3, 4, 5, 6, 7. Hence V7X.\"}",
+    {
+        "topic": "Syllogisms",
+        "question": "Statement I: All birds are animals\nStatement II: Some animals are mammals\nStatement III: All mammals are vertebrates\nConclusion I: Some vertebrates are birds\nConclusion II: Some animals are birds",
+        "choices": [
+            "A) If only conclusion I follow",
+            "B) If only conclusion II follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "C",
+        "explanation": "Statement III ensures all mammals are vertebrates, and Statement II links some animals to mammals. Thus, some vertebrates are birds via overlap. Conclusion II is also valid as birds are a subset of animals."
+    },
+    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: All birds are animals\\nStatement II: Some animals are mammals\\nStatement III: All mammals are vertebrates\\nConclusion I: Some vertebrates are birds\\nConclusion II: Some animals are birds\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"C\", \"explanation\": \"Statement III ensures all mammals are vertebrates, and Statement II links some animals to mammals. Thus, some vertebrates are birds via overlap. Conclusion II is also valid as birds are a subset of animals.\"}",
+    {
+        "topic": "Seating Arrangements (Linear, Circular)",
+        "question": "There are six people seated around a circular table, facing the center. A is seated second to the left of B. C is seated directly opposite D. E is seated between A and F. G is seated immediately to the right of F. If A moves two seats clockwise and F moves one seat counterclockwise, who will be seated directly opposite E?",
+        "choices": [
+            "A) B",
+            "B) C",
+            "C) D",
+            "D) G"
+        ],
+        "answer": "D",
+        "explanation": "Original seating: B-A-E-F-G-C. After movement: A moves to position 3, F moves to position 5. New seating: B-G-E-A-F-C. E is at position 3, opposite G at position 6."
+    },
+    "{\"topic\": \"Seating Arrangements (Linear, Circular)\", \"question\": \"There are six people seated around a circular table, facing the center. A is seated second to the left of B. C is seated directly opposite D. E is seated between A and F. G is seated immediately to the right of F. If A moves two seats clockwise and F moves one seat counterclockwise, who will be seated directly opposite E?\", \"choices\": [\"A) B\", \"B) C\", \"C) D\", \"D) G\"], \"answer\": \"D\", \"explanation\": \"Original seating: B-A-E-F-G-C. After movement: A moves to position 3, F moves to position 5. New seating: B-G-E-A-F-C. E is at position 3, opposite G at position 6.\"}",
+    {
+        "topic": "Syllogisms",
+        "question": "Statement I: All birds are animals\nStatement II: Some animals are mammals\nStatement III: No mammal is a reptile\nConclusion I: Some birds are mammals\nConclusion II: No bird is a reptile",
+        "choices": [
+            "A) If only conclusion II follows",
+            "B) If only conclusion I follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "A",
+        "explanation": "Statement III directly links mammals and reptiles, so no bird is a reptile. Conclusion I requires a link between birds and mammals, which is not definitively established."
+    },
+    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: All birds are animals\\nStatement II: Some animals are mammals\\nStatement III: No mammal is a reptile\\nConclusion I: Some birds are mammals\\nConclusion II: No bird is a reptile\", \"choices\": [\"A) If only conclusion II follows\", \"B) If only conclusion I follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"A\", \"explanation\": \"Statement III directly links mammals and reptiles, so no bird is a reptile. Conclusion I requires a link between birds and mammals, which is not definitively established.\"}",
+    {
+        "topic": "Seating Arrangements (Linear, Circular)",
+        "question": "In a circular table with 8 people, A, B, C, D, E, F, G, and H are seated. A is directly opposite D. B is seated between C and E. F is two seats to the left of G. H is seated three seats to the right of A. If E is seated two seats to the left of B, and C is seated two seats to the right of F, who is seated directly between G and H?",
+        "choices": [
+            "A) B",
+            "B) C",
+            "C) E",
+            "D) F"
+        ],
+        "answer": "A",
+        "explanation": "The correct arrangement is A, C, B, E, H, G, F, D. G is between F and H, and H is between G and A. Directly between G and H is B."
+    },
+    "{\"topic\": \"Seating Arrangements (Linear, Circular)\", \"question\": \"In a circular table with 8 people, A, B, C, D, E, F, G, and H are seated. A is directly opposite D. B is seated between C and E. F is two seats to the left of G. H is seated three seats to the right of A. If E is seated two seats to the left of B, and C is seated two seats to the right of F, who is seated directly between G and H?\", \"choices\": [\"A) B\", \"B) C\", \"C) E\", \"D) F\"], \"answer\": \"A\", \"explanation\": \"The correct arrangement is A, C, B, E, H, G, F, D. G is between F and H, and H is between G and A. Directly between G and H is B.\"}",
+    {
+        "topic": "Syllogisms",
+        "question": "Statement I: All birds are animals Statement II: Some animals are mammals Statement III: No mammal is a reptile Conclusion I: Some birds are mammals Conclusion II: No bird is a reptile",
+        "choices": [
+            "A) If only conclusion I follow",
+            "B) If only conclusion II follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "B",
+        "explanation": "Conclusion II is valid as birds are animals and no mammal is a reptile, so birds cannot be reptiles. Conclusion I is not valid as birds are animals but there's no direct link to mammals."
+    },
+    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: All birds are animals Statement II: Some animals are mammals Statement III: No mammal is a reptile Conclusion I: Some birds are mammals Conclusion II: No bird is a reptile\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"B\", \"explanation\": \"Conclusion II is valid as birds are animals and no mammal is a reptile, so birds cannot be reptiles. Conclusion I is not valid as birds are animals but there's no direct link to mammals.\"}",
+    {
+        "topic": "Mixed Series (Alphanumeric)",
+        "question": "K5M, L6N, M7O, N8P, _____",
+        "choices": [
+            "A) O9Q",
+            "B) P10R",
+            "C) N8P",
+            "D) O9R"
+        ],
+        "answer": "D",
+        "explanation": "First letters progress alphabetically: K, L, M, N, O. Second letters are in alphabetical order: 5, 6, 7, 8, 9. Third letters are in alphabetical order: M, N, O, P, R. The pattern skips P, so the correct answer is O9R."
+    },
+    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K5M, L6N, M7O, N8P, _____\", \"choices\": [\"A) O9Q\", \"B) P10R\", \"C) N8P\", \"D) O9R\"], \"answer\": \"D\", \"explanation\": \"First letters progress alphabetically: K, L, M, N, O. Second letters are in alphabetical order: 5, 6, 7, 8, 9. Third letters are in alphabetical order: M, N, O, P, R. The pattern skips P, so the correct answer is O9R.\"}",
+    {
+        "topic": "Seating Arrangements (Linear, Circular)",
+        "question": "There are eight people sitting in a circular table, facing the center. A is sitting between B and D. C is sitting two seats to the left of E. F is directly opposite G. H is sitting three seats to the right of A. If B moves two seats to the right and D moves one seat to the left, who will be sitting between F and H?",
+        "choices": [
+            "A) E",
+            "B) G",
+            "C) C",
+            "D) B"
+        ],
+        "answer": "A",
+        "explanation": "Original positions: A between B and D, C two left of E, F opposite G, H three right of A. After B and D move, E is between F and H."
+    },
+    "{\"topic\": \"Seating Arrangements (Linear, Circular)\", \"question\": \"There are eight people sitting in a circular table, facing the center. A is sitting between B and D. C is sitting two seats to the left of E. F is directly opposite G. H is sitting three seats to the right of A. If B moves two seats to the right and D moves one seat to the left, who will be sitting between F and H?\", \"choices\": [\"A) E\", \"B) G\", \"C) C\", \"D) B\"], \"answer\": \"A\", \"explanation\": \"Original positions: A between B and D, C two left of E, F opposite G, H three right of A. After B and D move, E is between F and H.\"}",
+    {
+        "topic": "Mixed Series (Alphanumeric)",
+        "question": "K9L, M7O, Q5R, S3T, _____",
+        "choices": [
+            "A) U1V",
+            "B) V2U",
+            "C) U1V",
+            "D) V2U"
+        ],
+        "answer": "C",
+        "explanation": "First letters: K, M, Q, S, U (skip 2 letters each time). Second letters: 9, 7, 5, 3, 1 (decrease by 2). Third letters: L, O, R, T, V (increase by 2). Hence U1V."
+    },
+    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K9L, M7O, Q5R, S3T, _____\", \"choices\": [\"A) U1V\", \"B) V2U\", \"C) U1V\", \"D) V2U\"], \"answer\": \"C\", \"explanation\": \"First letters: K, M, Q, S, U (skip 2 letters each time). Second letters: 9, 7, 5, 3, 1 (decrease by 2). Third letters: L, O, R, T, V (increase by 2). Hence U1V.\"}",
+    {
+        "topic": "Mixed Series (Alphanumeric)",
+        "question": "K9L, M7O, Q5R, S3T, _____",
+        "choices": [
+            "A) U1V",
+            "B) V2U",
+            "C) T3S",
+            "D) R5Q"
+        ],
+        "answer": "A",
+        "explanation": "First letters: K, M, Q, S, U (skip 2 letters each time). Second letters: 9, 7, 5, 3, 1 (decrease by 2). Third letters: L, O, R, T, V (increase by 3). Hence U1V."
+    },
+    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K9L, M7O, Q5R, S3T, _____\", \"choices\": [\"A) U1V\", \"B) V2U\", \"C) T3S\", \"D) R5Q\"], \"answer\": \"A\", \"explanation\": \"First letters: K, M, Q, S, U (skip 2 letters each time). Second letters: 9, 7, 5, 3, 1 (decrease by 2). Third letters: L, O, R, T, V (increase by 3). Hence U1V.\"}"
+]
