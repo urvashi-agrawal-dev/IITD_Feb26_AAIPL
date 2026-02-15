@@ -1,74 +1,122 @@
 [
-  {
-    "topic": "Logical Reasoning/Syllogisms",
-    "question": "Statement I: All roses are flowers. Statement II: Some flowers fade quickly. Conclusion I: Some roses fade quickly. Conclusion II: Some flowers are roses.",
-    "choices": [
-      "A) Only conclusion I follows",
-      "B) Only conclusion II follows",
-      "C) Both conclusions follow",
-      "D) Neither conclusion follows"
-    ],
-    "answer": "B",
-    "explanation": "All roses are flowers does not guarantee roses fade quickly. So conclusion I does not follow. But since all roses are flowers, some flowers must be roses. Therefore only conclusion II follows."
-  },
-  {
-    "topic": "Logical Reasoning/Syllogisms",
-    "question": "Statement I: Some engineers are managers. Statement II: All managers are graduates. Conclusion I: Some engineers are graduates. Conclusion II: All graduates are engineers.",
-    "choices": [
-      "A) Only conclusion I follows",
-      "B) Only conclusion II follows",
-      "C) Both conclusions follow",
-      "D) Neither conclusion follows"
-    ],
-    "answer": "A",
-    "explanation": "Some engineers are managers and all managers are graduates, so those engineers who are managers must be graduates. Conclusion I follows. But we cannot say all graduates are engineers. Conclusion II does not follow."
-  },
-  {
-    "topic": "Blood Relations and Family Tree/Family tree logic",
-    "question": "A is the father of B. C is the sister of B. D is the mother of A. How is D related to C?",
-    "choices": [
-      "A) Mother",
-      "B) Aunt",
-      "C) Grandmother",
-      "D) Sister"
-    ],
-    "answer": "C",
-    "explanation": "A is father of B and C is sister of B, so A is also father of C. D is mother of A, so D is grandmother of C."
-  },
-  {
-    "topic": "Blood Relations and Family Tree/Family tree logic",
-    "question": "Ravi says: 'The man in the photograph is the father of my mother's only son.' How is the man related to Ravi?",
-    "choices": [
-      "A) Brother",
-      "B) Father",
-      "C) Uncle",
-      "D) Grandfather"
-    ],
-    "answer": "B",
-    "explanation": "Mother's only son refers to Ravi himself. The father of Ravi is his father. So the man is Ravi's father."
-  },
-  {
-    "topic": "Puzzles/Seating Arrangements (Linear)",
-    "question": "Five friends A, B, C, D, and E sit in a row. A sits next to B. C is at one end. D sits between B and E. Who sits in the middle?",
-    "choices": [
-      "A) A",
-      "B) B",
-      "C) D",
-      "D) E"
-    ],
-    "answer": "C",
-    "explanation": "Since D sits between B and E, arrangement must be B-D-E or E-D-B. A sits next to B. C is at one end. Final valid arrangement places D in the center."
-  },
-  {
-    "topic": "Logical Reasoning/Series",
-    "question": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
-    "choices": [
-      "A) 40",
-      "B) 42",
-      "C) 44",
-      "D) 46"
-    ],
-    "answer": "B",
-    "explanation": "Pattern is n(n+1): 1×2=2, 2×3=6, 3×4=12, 4×5=20, 5×6=30, next is 6×7=42."
-  }
+    {
+        "topic": "Logical Reasoning/Syllogisms",
+        "question": "Statement I: Only some mammals are quadrupeds\nStatement II: All quadrupeds are animals\nStatement III: Some animals are non-vertebrates\nConclusion I: Some non-vertebrates are quadrupeds\nConclusion II: Some mammals are non-vertebrates",
+        "choices": [
+            "A) If only conclusion I follows",
+            "B) If only conclusion II follows",
+            "C) If both conclusions I and II follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "B",
+        "explanation": "Statement I introduces ambiguity by saying 'only some mammals are quadrupeds,' which means that most mammals are not quadrupeds. Statement II links all quadrupeds to animals, and Statement III says some animals are non-vertebrates. Conclusion I attempts to connect non-vertebrates to quadrupeds, but there's no definitive overlap between these groups. However, Conclusion II is valid because if some mammals are quadrupeds (as per Statement I), and some animals are non-vertebrates (Statement III), it\u2019s logically possible that those mammals could fall into the category of non-vertebrates. Thus, only Conclusion II holds."
+    },
+    {
+        "topic": "Logical Reasoning/Syllogisms",
+        "question": "Statement I: Only some mammals are quadrupeds\nStatement II: All quadrupeds are animals\nStatement III: Some animals are non-vertebrates\nConclusion I: Some non-vertebrates are quadrupeds\nConclusion II: Some mammals are non-vertebrates",
+        "choices": [
+            "A) If only conclusion I follows",
+            "B) If only conclusion II follows",
+            "C) If both conclusions I and II follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "B",
+        "explanation": "Statement I introduces ambiguity by saying 'only some mammals are quadrupeds,' which means that most mammals are not quadrupeds. Statement II links all quadrupeds to animals, and Statement III says some animals are non-vertebrates. Conclusion I attempts to connect non-vertebrates to quadrupeds, but there's no definitive overlap between these groups. However, Conclusion II is valid because if some mammals are quadrupeds (as per Statement I), and some animals are non-vertebrates (Statement III), it\u2019s logically possible that those mammals could fall into the category of non-vertebrates. Thus, only Conclusion II holds."
+    },
+    {
+        "topic": "Blood Relations and Family Tree/Family tree logic",
+        "question": "Rohan tells his friend that \u2018the person who is sitting next to me is the only child of my maternal uncle\u2019s daughter.\u2019 How is this person related to Rohan?",
+        "choices": [
+            "A) Cousin",
+            "B) Nephew",
+            "C) Brother",
+            "D) Son-in-law"
+        ],
+        "answer": "A",
+        "explanation": "Rohan's maternal uncle is the brother of Rohan's mother. The daughter of the maternal uncle would be Rohan's aunt (since she is the daughter of his mother's brother). The person sitting next to Rohan is the only child of this aunt, making them Rohan's cousin. Option A is correct because the only child of an aunt is a cousin. Option B suggests a nephew, which implies a parent-child relationship with a sibling, which doesn't fit. Option C assumes a direct sibling relation, which isn\u2019t supported by the statement. Option D introduces a completely unrelated family role, making it implausible."
+    },
+    {
+        "topic": "Blood Relations and Family Tree/Family tree logic",
+        "question": "Rohan tells his friend that \u2018the person who is sitting next to me is the only child of my maternal uncle\u2019s daughter.\u2019 How is this person related to Rohan?",
+        "choices": [
+            "A) Cousin",
+            "B) Nephew",
+            "C) Brother",
+            "D) Son-in-law"
+        ],
+        "answer": "A",
+        "explanation": "Rohan's maternal uncle is the brother of Rohan's mother. The daughter of the maternal uncle would be Rohan's aunt (since she is the daughter of his mother's brother). The person sitting next to Rohan is the only child of this aunt, making them Rohan's cousin. Option A is correct because the only child of an aunt is a cousin. Option B suggests a nephew, which implies a parent-child relationship with a sibling, which doesn't fit. Option C assumes a direct sibling relation, which isn\u2019t supported by the statement. Option D introduces a completely unrelated family role, making it implausible."
+    },
+    {
+        "topic": "Blood Relations and Family Tree/Family tree logic",
+        "question": "Ravi told his friend that the person in the photo is the son of his maternal uncle\u2019s only sibling. Ravi has no siblings. How is the person in the photo related to Ravi?",
+        "choices": [
+            "A) Cousin",
+            "B) Nephew",
+            "C) Brother",
+            "D) Uncle"
+        ],
+        "answer": "A",
+        "explanation": "Ravi's maternal uncle is the brother of Ravi's mother. The 'only sibling' of the uncle would be Ravi's aunt (since Ravi has no siblings). The person in the photo is the son of this aunt, making them Ravi's cousin. Option B suggests a direct family member, which is incorrect because Ravi has no brothers. Option C implies a blood relation within the same generation, which doesn't fit. Option D reverses the relationship entirely. Thus, the correct answer is A) Cousin."
+    },
+    {
+        "topic": "Blood Relations and Family Tree/Family tree logic",
+        "question": "Ravi told his friend that the person in the photo is the son of his maternal uncle\u2019s only sibling. Ravi has no siblings. How is the person in the photo related to Ravi?",
+        "choices": [
+            "A) Cousin",
+            "B) Nephew",
+            "C) Brother",
+            "D) Uncle"
+        ],
+        "answer": "A",
+        "explanation": "Ravi's maternal uncle is the brother of Ravi's mother. The 'only sibling' of the uncle would be Ravi's aunt (since Ravi has no siblings). The person in the photo is the son of this aunt, making them Ravi's cousin. Option B suggests a direct family member, which is incorrect because Ravi has no brothers. Option C implies a blood relation within the same generation, which doesn't fit. Option D reverses the relationship entirely. Thus, the correct answer is A) Cousin."
+    },
+    {
+        "topic": "Puzzles/Seating Arrangements (Linear, Circular)",
+        "question": "In a circular table seating arrangement, there are seven individuals: R, S, T, U, V, W, X seated clockwise around the table. It is given that R is sitting two seats apart from S, and T is immediately adjacent to both U and V. Additionally, W is directly opposite X, and V is three seats away from W in the clockwise direction. When the following swaps occur: R exchanges places with T, S switches with V, and U trades spots with W, what is the person sitting exactly between V and X after these changes?",
+        "choices": [
+            "A) S",
+            "B) T",
+            "C) U",
+            "D) X"
+        ],
+        "answer": "C",
+        "explanation": "Initially, based on constraints: W is opposite X \u2192 they are separated by three others. V is three seats clockwise from W \u2192 if W is seat 1, then V is seat 4. Since T is next to both U and V, T and U must be adjacent to V. Given R is two seats from S, possible placements can be deduced. After swaps: R \u2194 T, S \u2194 V, U \u2194 W. This results in new relative positions where U ends up between V and X. Thus, the correct answer is U."
+    },
+    {
+        "topic": "Puzzles/Seating Arrangements (Linear, Circular)",
+        "question": "In a circular table seating arrangement, there are seven individuals: R, S, T, U, V, W, X seated clockwise around the table. It is given that R is sitting two seats apart from S, and T is immediately adjacent to both U and V. Additionally, W is directly opposite X, and V is three seats away from W in the clockwise direction. When the following swaps occur: R exchanges places with T, S switches with V, and U trades spots with W, what is the person sitting exactly between V and X after these changes?",
+        "choices": [
+            "A) S",
+            "B) T",
+            "C) U",
+            "D) X"
+        ],
+        "answer": "C",
+        "explanation": "Initially, based on constraints: W is opposite X \u2192 they are separated by three others. V is three seats clockwise from W \u2192 if W is seat 1, then V is seat 4. Since T is next to both U and V, T and U must be adjacent to V. Given R is two seats from S, possible placements can be deduced. After swaps: R \u2194 T, S \u2194 V, U \u2194 W. This results in new relative positions where U ends up between V and X. Thus, the correct answer is U."
+    },
+    {
+        "topic": "Logical Reasoning/Syllogisms",
+        "question": "Statement I: Only some mammals are birds\nStatement II: All reptiles are non-mammals\nStatement III: Some non-birds are amphibians\nConclusion I: Some amphibians are mammals\nConclusion II: Some reptiles are birds",
+        "choices": [
+            "A) If only conclusion I follow",
+            "B) If only conclusion II follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "D",
+        "explanation": "Statement I implies that mammals and birds have partial overlap, but does not guarantee any connection between amphibians and mammals. Statement II confirms reptiles are separate from mammals, making Conclusion I impossible. Conclusion II is also invalid because reptiles are explicitly stated to be non-mammals, and there's no basis for them being birds. Thus, neither conclusion logically follows."
+    },
+    {
+        "topic": "Logical Reasoning/Syllogisms",
+        "question": "Statement I: Only some mammals are birds\nStatement II: All reptiles are non-mammals\nStatement III: Some non-birds are amphibians\nConclusion I: Some amphibians are mammals\nConclusion II: Some reptiles are birds",
+        "choices": [
+            "A) If only conclusion I follow",
+            "B) If only conclusion II follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "D",
+        "explanation": "Statement I implies that mammals and birds have partial overlap, but does not guarantee any connection between amphibians and mammals. Statement II confirms reptiles are separate from mammals, making Conclusion I impossible. Conclusion II is also invalid because reptiles are explicitly stated to be non-mammals, and there's no basis for them being birds. Thus, neither conclusion logically follows."
+    }
 ]

@@ -1,26 +1,62 @@
 [
     {
-        "topic": "Puzzles/Seating Arrangements (Linear, Circular)",
-        "question": "In a circular table seating arrangement, there are seven individuals: R, S, T, U, V, W, X seated clockwise around the table. It is given that R is sitting two seats apart from S, and T is immediately adjacent to both U and V. Additionally, W is directly opposite X, and V is three seats away from W in the clockwise direction. When the following swaps occur: R exchanges places with T, S switches with V, and U trades spots with W, what is the person sitting exactly between V and X after these changes?",
+        "topic": "Logical Reasoning/Syllogisms",
+        "question": "Statement I: Only some mammals are quadrupeds\nStatement II: All quadrupeds are animals\nStatement III: Some animals are non-vertebrates\nConclusion I: Some non-vertebrates are quadrupeds\nConclusion II: Some mammals are non-vertebrates",
         "choices": [
-            "A) S",
-            "B) U",
-            "C) T",
-            "D) X"
+            "A) If only conclusion I follows",
+            "B) If only conclusion II follows",
+            "C) If both conclusions I and II follow",
+            "D) If neither conclusion I nor conclusion II follows"
         ],
         "answer": "B",
-        "explanation": "Initially, based on constraints: W is opposite X \u2192 they are separated by three others. V is three seats clockwise from W \u2192 if W is seat 1, then V is seat 4. Since T is next to both U and V, T and U must be adjacent to V. Given R is two seats from S, possible placements can be deduced. After swaps: R \u2194 T, S \u2194 V, U \u2194 W. This results in new relative positions where U ends up between V and X. Thus, the correct answer is U."
+        "explanation": "Statement I introduces ambiguity by saying 'only some mammals are quadrupeds,' which means that most mammals are not quadrupeds. Statement II links all quadrupeds to animals, and Statement III says some animals are non-vertebrates. Conclusion I attempts to connect non-vertebrates to quadrupeds, but there's no definitive overlap between these groups. However, Conclusion II is valid because if some mammals are quadrupeds (as per Statement I), and some animals are non-vertebrates (Statement III), it\u2019s logically possible that those mammals could fall into the category of non-vertebrates. Thus, only Conclusion II holds."
     },
     {
         "topic": "Blood Relations and Family Tree/Family tree logic",
         "question": "Rohan tells his friend that \u2018the person who is sitting next to me is the only child of my maternal uncle\u2019s daughter.\u2019 How is this person related to Rohan?",
         "choices": [
-            "A) Niece",
-            "B) Cousin",
-            "C) Sister",
-            "D) Aunt"
+            "A) Cousin",
+            "B) Nephew",
+            "C) Brother",
+            "D) Son-in-law"
         ],
-        "answer": "B",
-        "explanation": "Rohan\u2019s maternal uncle is the brother of Rohan\u2019s mother. His daughter would be Rohan\u2019s aunt. The only child of Rohan\u2019s aunt is either Rohan\u2019s cousin (if the aunt has another child) or Rohan\u2019s sibling (if she is the only child). However, since the statement specifies \u2018the only child,\u2019 and the person is described as sitting next to Rohan, they cannot be Rohan\u2019s sibling because siblings are not typically referred to as \u2018sitting next to\u2019 someone in such contexts. Thus, the person must be Rohan\u2019s cousin. This makes option B the correct answer. Options A, C, and D introduce misleading relationships based on direct family terms without considering the indirect reference through the maternal uncle\u2019s daughter."
+        "answer": "A",
+        "explanation": "Rohan's maternal uncle is the brother of Rohan's mother. The daughter of the maternal uncle would be Rohan's aunt (since she is the daughter of his mother's brother). The person sitting next to Rohan is the only child of this aunt, making them Rohan's cousin. Option A is correct because the only child of an aunt is a cousin. Option B suggests a nephew, which implies a parent-child relationship with a sibling, which doesn't fit. Option C assumes a direct sibling relation, which isn\u2019t supported by the statement. Option D introduces a completely unrelated family role, making it implausible."
+    },
+    {
+        "topic": "Blood Relations and Family Tree/Family tree logic",
+        "question": "Ravi told his friend that the person in the photo is the son of his maternal uncle\u2019s only sibling. Ravi has no siblings. How is the person in the photo related to Ravi?",
+        "choices": [
+            "A) Cousin",
+            "B) Nephew",
+            "C) Brother",
+            "D) Uncle"
+        ],
+        "answer": "A",
+        "explanation": "Ravi's maternal uncle is the brother of Ravi's mother. The 'only sibling' of the uncle would be Ravi's aunt (since Ravi has no siblings). The person in the photo is the son of this aunt, making them Ravi's cousin. Option B suggests a direct family member, which is incorrect because Ravi has no brothers. Option C implies a blood relation within the same generation, which doesn't fit. Option D reverses the relationship entirely. Thus, the correct answer is A) Cousin."
+    },
+    {
+        "topic": "Puzzles/Seating Arrangements (Linear, Circular)",
+        "question": "In a circular table seating arrangement, there are seven individuals: R, S, T, U, V, W, X seated clockwise around the table. It is given that R is sitting two seats apart from S, and T is immediately adjacent to both U and V. Additionally, W is directly opposite X, and V is three seats away from W in the clockwise direction. When the following swaps occur: R exchanges places with T, S switches with V, and U trades spots with W, what is the person sitting exactly between V and X after these changes?",
+        "choices": [
+            "A) S",
+            "B) T",
+            "C) U",
+            "D) X"
+        ],
+        "answer": "C",
+        "explanation": "Initially, based on constraints: W is opposite X \u2192 they are separated by three others. V is three seats clockwise from W \u2192 if W is seat 1, then V is seat 4. Since T is next to both U and V, T and U must be adjacent to V. Given R is two seats from S, possible placements can be deduced. After swaps: R \u2194 T, S \u2194 V, U \u2194 W. This results in new relative positions where U ends up between V and X. Thus, the correct answer is U."
+    },
+    {
+        "topic": "Logical Reasoning/Syllogisms",
+        "question": "Statement I: Only some mammals are birds\nStatement II: All reptiles are non-mammals\nStatement III: Some non-birds are amphibians\nConclusion I: Some amphibians are mammals\nConclusion II: Some reptiles are birds",
+        "choices": [
+            "A) If only conclusion I follow",
+            "B) If only conclusion II follows",
+            "C) If conclusion I and II both follow",
+            "D) If neither conclusion I nor conclusion II follows"
+        ],
+        "answer": "D",
+        "explanation": "Statement I implies that mammals and birds have partial overlap, but does not guarantee any connection between amphibians and mammals. Statement II confirms reptiles are separate from mammals, making Conclusion I impossible. Conclusion II is also invalid because reptiles are explicitly stated to be non-mammals, and there's no basis for them being birds. Thus, neither conclusion logically follows."
     }
 ]

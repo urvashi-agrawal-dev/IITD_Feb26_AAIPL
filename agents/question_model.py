@@ -9,7 +9,7 @@ import torch
 class QAgent(object):
 
     def __init__(self, **kwargs):
-        model_name = "Qwen/Qwen3-4B"
+        model_name = "Qwen/Qwen2.5-7B-Instruct"
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name,

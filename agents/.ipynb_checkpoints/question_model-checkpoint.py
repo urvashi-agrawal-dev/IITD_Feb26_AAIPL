@@ -3,12 +3,13 @@ import json
 import re
 from typing import Optional, List, Union
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
 
 
 class QAgent(object):
 
     def __init__(self, **kwargs):
-        model_name = "Qwen/Qwen3-4B"
+        model_name = "hf_models/Qwen3-4B"
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name,
@@ -17,12 +18,15 @@ class QAgent(object):
 
         self.model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            torch_dtype="auto",
+            dtype="auto",
             device_map="auto",
         )
 
-    # ---------------- JSON CLEANER ---------------- #
+        self.seen_questions = set()
+
+    # ---------------- STRICT JSON CLEANER ---------------- #
     def clean_json(self, text: str):
+
         start = text.find("{")
         end = text.rfind("}")
 
@@ -30,7 +34,6 @@ class QAgent(object):
             return None
 
         json_str = text[start:end + 1]
-        json_str = json_str.replace("\n", " ")
 
         try:
             parsed = json.loads(json_str)
@@ -40,29 +43,48 @@ class QAgent(object):
                 if key not in parsed:
                     return None
 
-            if isinstance(parsed["answer"], str):
-                parsed["answer"] = parsed["answer"].strip().upper()[0]
+            # Normalize answer
+            parsed["answer"] = parsed["answer"].strip().upper()[0]
 
-            if isinstance(parsed["choices"], list):
-                cleaned_choices = []
-                for choice in parsed["choices"]:
-                    cleaned = re.sub(r'^([A-D]\))\s*\1', r'\1', choice)
-                    cleaned_choices.append(cleaned.strip())
-                parsed["choices"] = cleaned_choices
-            valid_options = ["A", "B", "C", "D"]
-            if parsed["answer"] not in valid_options:
+            if parsed["answer"] not in ["A", "B", "C", "D"]:
                 return None
-            answer_letter = parsed["answer"]
-            if not any(choice.startswith(f"{answer_letter})") for choice in parsed["choices"]):
+
+            # Remove duplicates globally
+            if parsed["question"] in self.seen_questions:
                 return None
+            self.seen_questions.add(parsed["question"])
+
+            # Validate choices
+            if not isinstance(parsed["choices"], list) or len(parsed["choices"]) != 4:
+                return None
+
+            cleaned_choices = []
+            for choice in parsed["choices"]:
+                choice = choice.strip()
+                choice = re.sub(r'^([A-D]\))\s*\1', r'\1', choice)
+                cleaned_choices.append(choice)
+
+            if len(set(cleaned_choices)) != 4:
+                return None
+
+            if not any(c.startswith(parsed["answer"] + ")") for c in cleaned_choices):
+                return None
+
+            parsed["choices"] = cleaned_choices
+
+            # Explanation validation
             explanation = parsed["explanation"]
-            if not explanation or len(explanation) < 15:
+            if not explanation or len(explanation) < 20:
                 return None
-            if answer_letter not in explanation:
+
+            # Token limit enforcement (150)
+            question_tokens = len(self.tokenizer.encode(parsed["question"], add_special_tokens=False))
+            choice_tokens = sum(len(self.tokenizer.encode(c, add_special_tokens=False)) for c in parsed["choices"])
+            answer_tokens = len(self.tokenizer.encode(parsed["answer"], add_special_tokens=False))
+
+            if question_tokens + choice_tokens + answer_tokens > 150:
                 return None
-            contradiction_words = ["however", "but", "although", "actually", "though"]
-            if any(word in explanation.lower() for word in contradiction_words):
-                return None
+
             return parsed
 
         except Exception:
@@ -78,10 +100,10 @@ class QAgent(object):
 
         if system_prompt is None:
             system_prompt = (
-                "Generate internally but DO NOT output reasoning steps."
-                "Output only valid JSON."
-                "If any logical contradiction appears, regenerate internally before responding."
-
+                "You are an expert exam setter. "
+                "Output STRICTLY valid JSON only. "
+                "Do not output reasoning steps. "
+                "If logical inconsistency appears, silently regenerate."
             )
 
         if isinstance(message, str):
@@ -111,17 +133,15 @@ class QAgent(object):
             truncation=True,
         ).to(self.model.device)
 
-        tgps_show_var = kwargs.get("tgps_show", False)
-
         start_time = time.time()
 
         generated_ids = self.model.generate(
             **model_inputs,
-            max_new_tokens= 220,
-            temperature=kwargs.get("temperature", 0.7),
-            top_p=kwargs.get("top_p", 0.9),
-            repetition_penalty=kwargs.get("repetition_penalty", 1.1),
-            do_sample=kwargs.get("do_sample", True),
+            max_new_tokens=300,
+            temperature=0.1,
+            top_p=0.8,
+            repetition_penalty=1.2,
+            do_sample=False,
             pad_token_id=self.tokenizer.pad_token_id,
         )
 
@@ -140,23 +160,14 @@ class QAgent(object):
                 output_ids,
                 skip_special_tokens=True
             ).strip()
-            print("\nRAW OUTPUT:\n", content)
 
             parsed = self.clean_json(content)
 
             if parsed is not None:
                 batch_outs.append(parsed)
 
-        # -------- FIXED RETURN BLOCK -------- #
-        if tgps_show_var:
-            return (
-                batch_outs[0] if len(batch_outs) == 1 else batch_outs,
-                token_len,
-                generation_time,
-            )
-
         return (
-            batch_outs[0] if len(batch_outs) == 1 else batch_outs,
-            None,
-            None,
+            batch_outs if len(batch_outs) > 1 else batch_outs[0] if batch_outs else [],
+            token_len,
+            generation_time,
         )
