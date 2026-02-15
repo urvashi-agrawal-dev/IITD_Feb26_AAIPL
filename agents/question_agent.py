@@ -219,7 +219,7 @@ class QuestioningAgent(object):
         # Ensure all saved as JSON strings
             for q in batch_resp:
                 if isinstance(q, dict):
-                questions.append(q)
+                    questions.append(q)
             tls.append(tl)
             gts.append(gt)
             pbar.update(1)

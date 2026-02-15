@@ -59,13 +59,11 @@ class QuestioningAgent(object):
         if wadvsys:
             # TODO: Manipulate this SYS prompt for better results
             sys_prompt = """
-            You are an expert competitive exam question setter.
-            Generate internally but DO NOT output reasoning steps.
-            Output STRICTLY valid JSON only.
-            Do not introduce new entities not mentioned.
-            Ensure logical consistency.
-            If inconsistency exists, silently regenerate before responding.
+            Do not repeat previously generated question structures.
+            Vary premises, names, and logic patterns.
+            Avoid using identical templates.
             """
+
 
         else:
             sys_prompt = "You are an examiner tasked with creating extremely difficult multiple-choice questions"
@@ -221,8 +219,6 @@ class QuestioningAgent(object):
         # Ensure all saved as JSON strings
             for q in batch_resp:
                 if isinstance(q, dict):
-                    questions.append(json.dumps(q))
-                elif isinstance(q, str):
                     questions.append(q)
             tls.append(tl)
             gts.append(gt)
