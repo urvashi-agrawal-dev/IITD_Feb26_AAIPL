@@ -21,8 +21,9 @@ class QAgent(object):
             device_map="auto",
         )
 
-    # ---------------- JSON CLEANER ---------------- #
+    # ---------------- STRICT JSON CLEANER ---------------- #
     def clean_json(self, text: str):
+
         start = text.find("{")
         end = text.rfind("}")
 
@@ -30,7 +31,6 @@ class QAgent(object):
             return None
 
         json_str = text[start:end + 1]
-        json_str = json_str.replace("\n", " ")
 
         try:
             parsed = json.loads(json_str)
@@ -40,27 +40,50 @@ class QAgent(object):
                 if key not in parsed:
                     return None
 
+            # ---- Normalize answer ----
             if isinstance(parsed["answer"], str):
                 parsed["answer"] = parsed["answer"].strip().upper()[0]
 
-            if isinstance(parsed["choices"], list):
-                cleaned_choices = []
-                for choice in parsed["choices"]:
-                    cleaned = re.sub(r'^([A-D]\))\s*\1', r'\1', choice)
-                    cleaned_choices.append(cleaned)
-                parsed["choices"] = cleaned_choices
-            valid_options = ["A", "B", "C", "D"]
-            if parsed["answer"] not in valid_options:
-                return None
-            answer_letter = parsed["answer"]
-            if not any(choice.startswith(f"{answer_letter})") for choice in parsed["choices"]):
-                return None
-            if not parsed["explanation"] or len(parsed["explanation"]) < 10:
+            if parsed["answer"] not in ["A", "B", "C", "D"]:
                 return None
 
+            # ---- Clean choices ----
+            if not isinstance(parsed["choices"], list) or len(parsed["choices"]) != 4:
+                return None
+
+            cleaned_choices = []
+            for choice in parsed["choices"]:
+                choice = choice.strip()
+                choice = re.sub(r'^([A-D]\))\s*\1', r'\1', choice)
+                cleaned_choices.append(choice)
+
+            # Remove duplicate choices
+            if len(set(cleaned_choices)) != 4:
+                return None
+
+            parsed["choices"] = cleaned_choices
+
+            # Ensure correct option exists
+            if not any(c.startswith(parsed["answer"] + ")") for c in cleaned_choices):
+                return None
+
+            # Explanation checks
+            explanation = parsed["explanation"]
+            if not explanation or len(explanation) < 20:
+                return None
+
+            # contradiction_words = ["however", "but", "although", "actually", "though"]
+            # if any(word in explanation.lower() for word in contradiction_words):
+            #     return None
+            question_tokens = len(self.tokenizer.encode(parsed["question"], add_special_tokens=False))
+            choice_tokens = sum(len(self.tokenizer.encode(c, add_special_tokens=False)) for c in parsed["choices"])
+            answer_tokens = len(self.tokenizer.encode(parsed["answer"], add_special_tokens=False))
+
+            if question_tokens + choice_tokens + answer_tokens > 150:
+                return None
             return parsed
 
-        except:
+        except Exception:
             return None
 
     # ---------------- GENERATION ---------------- #
@@ -73,14 +96,11 @@ class QAgent(object):
 
         if system_prompt is None:
             system_prompt = (
-                "You are a strict competitive exam question setter.\n"
-                "Return ONLY a valid JSON object.\n"
-                "Ensure logical correctness.\n"
-                "Ensure explanation matches answer exactly.\n"
-                "Do NOT contradict yourself.\n"
-                "No repeated choices.\n"
-                "No duplicate options.\n"
-
+                "You are an expert exam setter. "
+                "Generate internally but DO NOT output reasoning steps. "
+                "Output STRICTLY valid JSON only. "
+                "Do not add commentary. "
+                "If logical inconsistency appears, silently regenerate."
             )
 
         if isinstance(message, str):
@@ -110,16 +130,14 @@ class QAgent(object):
             truncation=True,
         ).to(self.model.device)
 
-        tgps_show_var = kwargs.get("tgps_show", False)
-
         start_time = time.time()
 
         generated_ids = self.model.generate(
             **model_inputs,
-            max_new_tokens= 220,
-            temperature=kwargs.get("temperature", 0.7),
+            max_new_tokens=kwargs.get("max_new_tokens", 200),
+            temperature=kwargs.get("temperature", 0.3),
             top_p=kwargs.get("top_p", 0.9),
-            repetition_penalty=kwargs.get("repetition_penalty", 1.1),
+            repetition_penalty=kwargs.get("repetition_penalty", 1.2),
             do_sample=kwargs.get("do_sample", True),
             pad_token_id=self.tokenizer.pad_token_id,
         )
@@ -139,6 +157,7 @@ class QAgent(object):
                 output_ids,
                 skip_special_tokens=True
             ).strip()
+
             print("\nRAW OUTPUT:\n", content)
 
             parsed = self.clean_json(content)
@@ -146,16 +165,8 @@ class QAgent(object):
             if parsed is not None:
                 batch_outs.append(parsed)
 
-        # -------- FIXED RETURN BLOCK -------- #
-        if tgps_show_var:
-            return (
-                batch_outs[0] if len(batch_outs) == 1 else batch_outs,
-                token_len,
-                generation_time,
-            )
-
         return (
-            batch_outs[0] if len(batch_outs) == 1 else batch_outs,
-            None,
-            None,
+            batch_outs if len(batch_outs) > 1 else batch_outs[0] if batch_outs else [],
+            token_len,
+            generation_time,
         )

@@ -59,75 +59,88 @@ class QuestioningAgent(object):
         if wadvsys:
             # TODO: Manipulate this SYS prompt for better results
             sys_prompt = """
-            You are an **expert-level examiner** with deep expertise in designing **highly challenging and conceptually rigorous multiple-choice questions (MCQs)** for the **Quantitative Aptitude and Analytical Reasoning** sections of top-tier competitive exams.
-            Think step by step to generate the question and solve the same, but only output the final answer. Do not show your thinking process.
-            **Please DO NOT reveal the solution steps or any intermediate reasoning.**
+            You are an expert competitive exam question setter.
+            Generate internally but DO NOT output reasoning steps.
+            Output STRICTLY valid JSON only.
+            Do not introduce new entities not mentioned.
+            Ensure logical consistency.
+            If inconsistency exists, silently regenerate before responding.
             """
+
         else:
             sys_prompt = "You are an examiner tasked with creating extremely difficult multiple-choice questions"
         tmpl = (
             "Generate an EXTREMELY DIFFICULT MCQ on topic: {0}.\n\n"
             "**CRITICAL REQUIREMENTS:**\n"
-            '1.  **Topic Alignment**: The "question" must be strictly relevant to the topic: {1}.\n'
-            "2.  **Question Quality**: The question must be EXTREMELY DIFFICULT.\n"
-            "    - The question must require at least 3 logical inference steps.\n"
-            "    - Avoid direct pattern recognition.\n"
-            "    - Include hidden traps.\n"
-            "    - Avoid common textbook examples.\n"
-            "    - Do not reuse standard structures.\n"
-
-            
-            '3.  **Choices (4 total)**: Generate exactly FOUR multiple-choice options, labeled "A)", "B)", "C)", and "D)".\n'
-            "4.  **Single Correct Answer**: Ensure that option {2} is only factually correct.\n"
-            "5.  **Plausible Distractors**: While option {3} are three incorrect UNIQUE choices which are highly plausible and common misconceptions related to the topic, designed to mislead someone without expert knowledge.\n"
-            '6.  **Answer Key**: The "answer" field in the JSON should be ONLY the letter {4}.\n'
-            '7.  **Explanation**: The "explanation" field provides a concise (under 100 words) and clear justification for why the correct answer is correct.\n\n'
-            "{5}"
-            "RESPONSE FORMAT: Strictly generate a valid JSON object ensuring proper syntax and structure as shown below.\n\n"
-            "EXAMPLE: {6}\n"
+            "1. Topic Alignment: Question must strictly match topic {1}.\n"
+            "2. Must require at least 3 logical inference steps.\n"
+            "3. Avoid textbook patterns.\n"
+            "4. Include hidden traps.\n"
+            "5. Use strong distractors.\n\n"
+            "Ensure option {2} is the ONLY correct answer.\n"
+            "Options {3} must be plausible but incorrect.\n\n"
+            "{4}\n"
+            "Additional rule: {5}\n\n"
+            "Return strictly in JSON format:\n"
             "{{\n"
-            '  "topic": "{7}",\n'
+            '  "topic": "{6}",\n'
             '  "question": "...",\n'
             '  "choices": ["A) ...", "B) ...", "C) ...", "D) ..."],\n'
-            '  "answer": "{8}",\n'
-            '  "explanation": "Provide a brief explanation why {9} is correct within 100 words."\n'
+            '  "answer": "{2}",\n'
+            '  "explanation": "Explain why {2} is correct."\n'
             "}}"
         )
-        # Remove model's preferential bias for options
         correct_option = random.choice(["A", "B", "C", "D"])
-        distractors = ", ".join(
-            [opt for opt in ["A", "B", "C", "D"] if opt != correct_option]
-        )
-
-        if wicl:
-            inc_samples_ex = self.build_inc_samples(inc_samples, topic)
-        else:
-            inc_samples_ex = ""
-            # ------------------------------
-# 🔥 Topic-Specific Strengthening
-# ------------------------------
+        distractors = ", ".join([x for x in ["A", "B", "C", "D"] if x != correct_option])
         if "Syllogism" in topic:
             extra_rules = "Use 3–4 layered logical statements with quantifier traps."
         elif "Family" in topic:
             extra_rules = "Use at least 3 generations and indirect references."
         elif "Seating" in topic:
-            extra_rules = "Use 7-8 people with movement and re-arrangement."
+            extra_rules = "Use 7–8 people with movement and rearrangement."
         elif "Series" in topic:
             extra_rules = "Use multi-dimensional pattern (letters + numbers + skipping)."
         else:
             extra_rules = ""
+        # Remove model's preferential bias for options
+        
+
+        if wicl:
+            inc_samples_ex = self.build_inc_samples(inc_samples, topic)
+        else:
+            inc_samples_ex = ""
+        
+
+            tmpl = (
+                "Generate an EXTREMELY DIFFICULT MCQ on topic: {0}.\n\n"
+                "Requirements:\n"
+                "- Must require at least 3 logical inference steps.\n"
+                "- Avoid textbook patterns.\n"
+                "- Include hidden traps.\n"
+                "- Avoid standard structures.\n"
+                "- {5}\n\n"
+                "Ensure option {2} is correct.\n"
+                "Options {3} must be strong distractors.\n\n"
+                "{4}\n\n"
+                "Return strictly in JSON format:\n"
+                "{{\n"
+                '  "topic": "{6}",\n'
+                '  "question": "...",\n'
+                '  "choices": ["A) ...", "B) ...", "C) ...", "D) ..."],\n'
+                '  "answer": "{2}",\n'
+                '  "explanation": "Explain why {2} is correct."\n'
+                "}}"
+            )
+
 
         prompt = tmpl.format(
             topic,
             topic,
             correct_option,
             distractors,
-            correct_option,
             inc_samples_ex,
-            topic,
-            topic.split("/")[-1],
-            correct_option,
-            correct_option,
+            extra_rules,
+             topic,
         )
 
         return prompt, sys_prompt
@@ -245,14 +258,10 @@ class QuestioningAgent(object):
                 ):
                     # check answer format
                     # Check token length
-                    check_len = sum(
-                        self.count_tokens_q(q2[k]) for k in ["question", "answer"]
-                    )
-                    check_len += (
-                        sum(self.count_tokens_q(choice) for choice in q2["choices"])
-                        - 15
-                    )
-                    if check_len < 130:
+                    check_len = self.count_tokens_q(q2["question"])
+                    check_len += sum(self.count_tokens_q(choice) for choice in q2["choices"])
+                    check_len += self.count_tokens_q(q2["answer"])
+                    if check_len <= 150:
                         if (
                             check_len
                             + self.count_tokens_q(q2.get("explanation", "None"))
@@ -279,9 +288,17 @@ class QuestioningAgent(object):
                     continue
             else:
                 continue
-        if len(correct_format_question) >= 0.5 * len(questions):
-            return correct_format_question
-        return list()
+        # Remove duplicate questions based on question text
+        unique_questions = {}
+        for q in correct_format_question:
+            unique_questions[q["question"].strip()] = q
+
+        final_list = list(unique_questions.values())
+
+        if len(final_list) >= 0.5 * len(questions):
+            return final_list
+        return []
+
 
     def save_questions(self, questions: Any, file_path: str | Path) -> None:
         """Save generated questions to a JSON file"""

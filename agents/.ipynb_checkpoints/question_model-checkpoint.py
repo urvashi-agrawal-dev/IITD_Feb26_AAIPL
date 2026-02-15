@@ -47,12 +47,25 @@ class QAgent(object):
                 cleaned_choices = []
                 for choice in parsed["choices"]:
                     cleaned = re.sub(r'^([A-D]\))\s*\1', r'\1', choice)
-                    cleaned_choices.append(cleaned)
+                    cleaned_choices.append(cleaned.strip())
                 parsed["choices"] = cleaned_choices
-
+            valid_options = ["A", "B", "C", "D"]
+            if parsed["answer"] not in valid_options:
+                return None
+            answer_letter = parsed["answer"]
+            if not any(choice.startswith(f"{answer_letter})") for choice in parsed["choices"]):
+                return None
+            explanation = parsed["explanation"]
+            if not explanation or len(explanation) < 15:
+                return None
+            if answer_letter not in explanation:
+                return None
+            contradiction_words = ["however", "but", "although", "actually", "though"]
+            if any(word in explanation.lower() for word in contradiction_words):
+                return None
             return parsed
 
-        except:
+        except Exception:
             return None
 
     # ---------------- GENERATION ---------------- #
@@ -65,13 +78,9 @@ class QAgent(object):
 
         if system_prompt is None:
             system_prompt = (
-                "You are a strict competitive exam question setter.\n"
-                "Return ONLY a valid JSON object.\n"
-                "Ensure logical correctness.\n"
-                "Ensure explanation matches answer exactly.\n"
-                "Do NOT contradict yourself.\n"
-                "No repeated choices.\n"
-                "No duplicate options.\n"
+                "Generate internally but DO NOT output reasoning steps."
+                "Output only valid JSON."
+                "If any logical contradiction appears, regenerate internally before responding."
 
             )
 
