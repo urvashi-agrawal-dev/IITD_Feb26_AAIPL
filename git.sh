@@ -5,8 +5,8 @@ set -e
 REPO_NAME="IITD_Feb26_AAIPL"
 VISIBILITY="public"                    # "public" or "private"
 COMMIT_MESSAGE="Initial commit"
-GITHUB_USERNAME="your-username"
-GITHUB_EMAIL="you@example.com"
+GITHUB_USERNAME="urvashi-agrawal-dev"
+GITHUB_EMAIL="urvashivdjs10b@gmail.com"
 # =================================
 
 # Step 1: Install GitHub CLI if missing
@@ -33,8 +33,8 @@ gh auth setup-git
 if [ ! -d .git ]; then
     git init
 fi
-git config user.name "$GITHUB_USERNAME"
-git config user.email "$GITHUB_EMAIL"
+git config user.name "urvashi-agrawal-dev"
+git config user.email "urvashivdjs10b@gmail.com"
 
 # Step 5: Warn if no .gitignore
 if [ ! -f .gitignore ]; then
@@ -46,23 +46,23 @@ git commit -m "$COMMIT_MESSAGE"
 git branch -M main
 
 # Step 6: Create GitHub repo (if it doesn't already exist)
-REMOTE_URL="https://github.com/$GITHUB_USERNAME/$REPO_NAME.git"
+REMOTE_URL="https://github.com/urvashi-agrawal-dev/IITD_Feb26_AAIPL/.git"
 
-if gh repo view "$GITHUB_USERNAME/$REPO_NAME" &>/dev/null; then
+if gh repo view "urvashi-agrawal-dev/IITD_Feb26_AAIPL/" &>/dev/null; then
     echo "Repo already exists on GitHub. Skipping creation."
 else
     echo "Creating remote repo on GitHub..."
     if [ "$VISIBILITY" = "private" ]; then
         gh repo create "$REPO_NAME" --private
     else
-        gh repo create "$REPO_NAME" --public
+        gh repo create "IITD_Feb26_AAIPL" --public
     fi
 fi
 
 # Step 7: Set remote & push
-git remote set-url origin "$REMOTE_URL" 2>/dev/null || git remote add origin "$REMOTE_URL"
+git remote set-url origin "https://github.com/urvashi-agrawal-dev/IITD_Feb26_AAIPL/" 2>/dev/null || git remote add origin "https://github.com/urvashi-agrawal-dev/IITD_Feb26_AAIPL/"
 
 echo "Pushing code to GitHub..."
 git push -u origin main
 
-echo "Done! Repo pushed to: $REMOTE_URL"
+echo "Done! Repo pushed to: https://github.com/urvashi-agrawal-dev/IITD_Feb26_AAIPL/"
