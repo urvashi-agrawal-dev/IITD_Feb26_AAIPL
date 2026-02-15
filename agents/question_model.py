@@ -3,6 +3,7 @@ import json
 import re
 from typing import Optional, List, Union
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
 
 
 class QAgent(object):
@@ -17,9 +18,11 @@ class QAgent(object):
 
         self.model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            torch_dtype="auto",
+            dtype="auto",
             device_map="auto",
         )
+
+        self.seen_questions = set()
 
     # ---------------- STRICT JSON CLEANER ---------------- #
     def clean_json(self, text: str):
@@ -40,14 +43,18 @@ class QAgent(object):
                 if key not in parsed:
                     return None
 
-            # ---- Normalize answer ----
-            if isinstance(parsed["answer"], str):
-                parsed["answer"] = parsed["answer"].strip().upper()[0]
+            # Normalize answer
+            parsed["answer"] = parsed["answer"].strip().upper()[0]
 
             if parsed["answer"] not in ["A", "B", "C", "D"]:
                 return None
 
-            # ---- Clean choices ----
+            # Remove duplicates globally
+            if parsed["question"] in self.seen_questions:
+                return None
+            self.seen_questions.add(parsed["question"])
+
+            # Validate choices
             if not isinstance(parsed["choices"], list) or len(parsed["choices"]) != 4:
                 return None
 
@@ -57,30 +64,27 @@ class QAgent(object):
                 choice = re.sub(r'^([A-D]\))\s*\1', r'\1', choice)
                 cleaned_choices.append(choice)
 
-            # Remove duplicate choices
             if len(set(cleaned_choices)) != 4:
+                return None
+
+            if not any(c.startswith(parsed["answer"] + ")") for c in cleaned_choices):
                 return None
 
             parsed["choices"] = cleaned_choices
 
-            # Ensure correct option exists
-            if not any(c.startswith(parsed["answer"] + ")") for c in cleaned_choices):
-                return None
-
-            # Explanation checks
+            # Explanation validation
             explanation = parsed["explanation"]
             if not explanation or len(explanation) < 20:
                 return None
 
-            # contradiction_words = ["however", "but", "although", "actually", "though"]
-            # if any(word in explanation.lower() for word in contradiction_words):
-            #     return None
+            # Token limit enforcement (150)
             question_tokens = len(self.tokenizer.encode(parsed["question"], add_special_tokens=False))
             choice_tokens = sum(len(self.tokenizer.encode(c, add_special_tokens=False)) for c in parsed["choices"])
             answer_tokens = len(self.tokenizer.encode(parsed["answer"], add_special_tokens=False))
 
             if question_tokens + choice_tokens + answer_tokens > 150:
                 return None
+
             return parsed
 
         except Exception:
@@ -97,9 +101,8 @@ class QAgent(object):
         if system_prompt is None:
             system_prompt = (
                 "You are an expert exam setter. "
-                "Generate internally but DO NOT output reasoning steps. "
                 "Output STRICTLY valid JSON only. "
-                "Do not add commentary. "
+                "Do not output reasoning steps. "
                 "If logical inconsistency appears, silently regenerate."
             )
 
@@ -134,11 +137,11 @@ class QAgent(object):
 
         generated_ids = self.model.generate(
             **model_inputs,
-            max_new_tokens=kwargs.get("max_new_tokens", 200),
-            temperature=kwargs.get("temperature", 0.3),
-            top_p=kwargs.get("top_p", 0.9),
-            repetition_penalty=kwargs.get("repetition_penalty", 1.2),
-            do_sample=kwargs.get("do_sample", True),
+            max_new_tokens=300,
+            temperature=0.1,
+            top_p=0.8,
+            repetition_penalty=1.2,
+            do_sample=False,
             pad_token_id=self.tokenizer.pad_token_id,
         )
 
@@ -157,8 +160,6 @@ class QAgent(object):
                 output_ids,
                 skip_special_tokens=True
             ).strip()
-
-            print("\nRAW OUTPUT:\n", content)
 
             parsed = self.clean_json(content)
 

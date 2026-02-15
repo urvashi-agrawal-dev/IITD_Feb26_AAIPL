@@ -59,14 +59,9 @@ class QuestioningAgent(object):
         if wadvsys:
             # TODO: Manipulate this SYS prompt for better results
             sys_prompt = """
-            You are a strict competitive exam question designer.
-            Rules:
-            - Output ONLY valid JSON.
-            - Do NOT include reasoning steps.
-            - Keep question + choices + answer under 150 tokens.
-            - Keep explanation under 120 words.
-            - Ensure logic is 100% internally consistent.
-            - Avoid contradictions.
+            Do not repeat previously generated question structures.
+            Vary premises, names, and logic patterns.
+            Avoid using identical templates.
             """
 
 
@@ -224,9 +219,7 @@ class QuestioningAgent(object):
         # Ensure all saved as JSON strings
             for q in batch_resp:
                 if isinstance(q, dict):
-                    questions.append(json.dumps(q))
-                elif isinstance(q, str):
-                    questions.append(q)
+                questions.append(q)
             tls.append(tl)
             gts.append(gt)
             pbar.update(1)
