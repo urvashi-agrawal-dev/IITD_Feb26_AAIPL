@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "topic": "Puzzles/Seating Arrangements (Linear, Circular)",
+        "question": "In a circular table seating arrangement, there are seven individuals: R, S, T, U, V, W, X seated clockwise around the table. It is given that R is sitting two seats apart from S, and T is immediately adjacent to both U and V. Additionally, W is directly opposite X, and V is three seats away from W in the clockwise direction. When the following swaps occur: R exchanges places with T, S switches with V, and U trades spots with W, what is the person sitting exactly between V and X after these changes?",
+        "choices": [
+            "A) S",
+            "B) U",
+            "C) T",
+            "D) X"
+        ],
+        "answer": "B",
+        "explanation": "Initially, based on constraints: W is opposite X \u2192 they are separated by three others. V is three seats clockwise from W \u2192 if W is seat 1, then V is seat 4. Since T is next to both U and V, T and U must be adjacent to V. Given R is two seats from S, possible placements can be deduced. After swaps: R \u2194 T, S \u2194 V, U \u2194 W. This results in new relative positions where U ends up between V and X. Thus, the correct answer is U."
+    },
+    {
+        "topic": "Blood Relations and Family Tree/Family tree logic",
+        "question": "Rohan tells his friend that \u2018the person who is sitting next to me is the only child of my maternal uncle\u2019s daughter.\u2019 How is this person related to Rohan?",
+        "choices": [
+            "A) Niece",
+            "B) Cousin",
+            "C) Sister",
+            "D) Aunt"
+        ],
+        "answer": "B",
+        "explanation": "Rohan\u2019s maternal uncle is the brother of Rohan\u2019s mother. His daughter would be Rohan\u2019s aunt. The only child of Rohan\u2019s aunt is either Rohan\u2019s cousin (if the aunt has another child) or Rohan\u2019s sibling (if she is the only child). However, since the statement specifies \u2018the only child,\u2019 and the person is described as sitting next to Rohan, they cannot be Rohan\u2019s sibling because siblings are not typically referred to as \u2018sitting next to\u2019 someone in such contexts. Thus, the person must be Rohan\u2019s cousin. This makes option B the correct answer. Options A, C, and D introduce misleading relationships based on direct family terms without considering the indirect reference through the maternal uncle\u2019s daughter."
+    }
+]

@@ -224,7 +224,15 @@ class QuestioningAgent(object):
             gts.append(gt)
             pbar.update(1)
         pbar.close()
-        questions = list(dict.fromkeys(questions))
+        # questions = list(dict.fromkeys(questions))
+        # Remove duplicates based on question text
+        unique_questions = {}
+        for q in questions:
+            if isinstance(q, dict):
+                unique_questions[q["question"].strip()] = q
+
+        questions = list(unique_questions.values())
+
         return questions, tls, gts
 
     def count_tokens_q(self, text: str) -> int:

@@ -1,249 +1,74 @@
 [
-    {
-        "topic": "Series and Patterns/Mixed Series (Alphanumeric)",
-        "question": "K9L, M8N, O7P, Q6R, ______",
-        "choices": [
-            "A) S5T",
-            "B) R4S",
-            "C) T3U",
-            "D) P5O"
-        ],
-        "answer": "A",
-        "explanation": "First letters: K, M, O, Q, S (skip 2 letters). Second letters: L, N, P, R, T (alphabetical). Numbers: 9, 8, 7, 6, 5 (decreasing by 1). Hence S5T."
-    },
-    "{\"topic\": \"Series and Patterns/Mixed Series (Alphanumeric)\", \"question\": \"K9L, M8N, O7P, Q6R, ______\", \"choices\": [\"A) S5T\", \"B) R4S\", \"C) T3U\", \"D) P5O\"], \"answer\": \"A\", \"explanation\": \"First letters: K, M, O, Q, S (skip 2 letters). Second letters: L, N, P, R, T (alphabetical). Numbers: 9, 8, 7, 6, 5 (decreasing by 1). Hence S5T.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Rohan says, 'Her father is the only son of my mother\u2019s brother.\u2019 How is she related to Rohan?",
-        "choices": [
-            "A) Cousin",
-            "B) Sister",
-            "C) Niece",
-            "D) Aunt"
-        ],
-        "answer": "B",
-        "explanation": "Rohan's mother's brother is his uncle. The only son of this uncle is Rohan himself. Therefore, 'her father' is Rohan, making her his sister."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Rohan says, 'Her father is the only son of my mother\\u2019s brother.\\u2019 How is she related to Rohan?\", \"choices\": [\"A) Cousin\", \"B) Sister\", \"C) Niece\", \"D) Aunt\"], \"answer\": \"B\", \"explanation\": \"Rohan's mother's brother is his uncle. The only son of this uncle is Rohan himself. Therefore, 'her father' is Rohan, making her his sister.\"}",
-    {
-        "topic": "Series and Patterns/Mixed Series (Alphanumeric)",
-        "question": "K9L, M8N, O7P, Q6R, ______",
-        "choices": [
-            "A) S5T",
-            "B) R4S",
-            "C) T5U",
-            "D) P4O"
-        ],
-        "answer": "C",
-        "explanation": "First letters: K, M, O, Q, S (skip 2 letters). Second letters: L, N, P, R, T (alphabetical). Numbers: 9, 8, 7, 6, 5 (decreasing by 1). Hence T5U."
-    },
-    "{\"topic\": \"Series and Patterns/Mixed Series (Alphanumeric)\", \"question\": \"K9L, M8N, O7P, Q6R, ______\", \"choices\": [\"A) S5T\", \"B) R4S\", \"C) T5U\", \"D) P4O\"], \"answer\": \"C\", \"explanation\": \"First letters: K, M, O, Q, S (skip 2 letters). Second letters: L, N, P, R, T (alphabetical). Numbers: 9, 8, 7, 6, 5 (decreasing by 1). Hence T5U.\"}",
-    {
-        "topic": "Logical Reasoning/Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: No fish is a mammal",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "C",
-        "explanation": "Birds overlap mammals via some mammals are birds, and all birds are reptiles, so some mammals are reptiles. No reptile is a fish, so no fish is a mammal."
-    },
-    "{\"topic\": \"Logical Reasoning/Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: No fish is a mammal\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"C\", \"explanation\": \"Birds overlap mammals via some mammals are birds, and all birds are reptiles, so some mammals are reptiles. No reptile is a fish, so no fish is a mammal.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Rohan says, 'The woman in the photo is the daughter of my maternal uncle\u2019s only sibling.\u2019 How is the woman related to Rohan?",
-        "choices": [
-            "A) Cousin",
-            "B) Sister",
-            "C) Aunt",
-            "D) Niece"
-        ],
-        "answer": "B",
-        "explanation": "Rohan's maternal uncle is his aunt's son. His maternal uncle's only sibling is Rohan's aunt. The daughter of Rohan's aunt is his sister."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Rohan says, 'The woman in the photo is the daughter of my maternal uncle\\u2019s only sibling.\\u2019 How is the woman related to Rohan?\", \"choices\": [\"A) Cousin\", \"B) Sister\", \"C) Aunt\", \"D) Niece\"], \"answer\": \"B\", \"explanation\": \"Rohan's maternal uncle is his aunt's son. His maternal uncle's only sibling is Rohan's aunt. The daughter of Rohan's aunt is his sister.\"}",
-    {
-        "topic": "Logical Reasoning/Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: No mammal is a fish",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "B",
-        "explanation": "Birds are reptiles, but no overlap between mammals and reptiles is certain. Fish are separate from reptiles, so no mammal is a fish."
-    },
-    "{\"topic\": \"Logical Reasoning/Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: No mammal is a fish\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"B\", \"explanation\": \"Birds are reptiles, but no overlap between mammals and reptiles is certain. Fish are separate from reptiles, so no mammal is a fish.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, 'Her father is the only son of my mother\u2019s brother.\u2019 How is she related to Ravi?",
-        "choices": [
-            "A) Cousin",
-            "B) Niece",
-            "C) Sister",
-            "D) Aunt"
-        ],
-        "answer": "A",
-        "explanation": "Ravi's mother's brother is Ravi's uncle. The only son of this uncle is Ravi himself. Her father being Ravi means she is Ravi's cousin. Hence, she is his cousin."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, 'Her father is the only son of my mother\\u2019s brother.\\u2019 How is she related to Ravi?\", \"choices\": [\"A) Cousin\", \"B) Niece\", \"C) Sister\", \"D) Aunt\"], \"answer\": \"A\", \"explanation\": \"Ravi's mother's brother is Ravi's uncle. The only son of this uncle is Ravi himself. Her father being Ravi means she is Ravi's cousin. Hence, she is his cousin.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, 'Her father is the only son of my mother\u2019s brother.\u2019 How is she related to Ravi?",
-        "choices": [
-            "A) Cousin",
-            "B) Niece",
-            "C) Sister",
-            "D) Aunt"
-        ],
-        "answer": "C",
-        "explanation": "Ravi's mother's brother is his uncle. The only son of this uncle is Ravi himself. Therefore, 'her father' is Ravi, making her Ravi's sister."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, 'Her father is the only son of my mother\\u2019s brother.\\u2019 How is she related to Ravi?\", \"choices\": [\"A) Cousin\", \"B) Niece\", \"C) Sister\", \"D) Aunt\"], \"answer\": \"C\", \"explanation\": \"Ravi's mother's brother is his uncle. The only son of this uncle is Ravi himself. Therefore, 'her father' is Ravi, making her Ravi's sister.\"}",
-    {
-        "topic": "Series and Patterns/Mixed Series (Alphanumeric)",
-        "question": "K9L, M8N, O7P, Q6R, _____",
-        "choices": [
-            "A) S5T",
-            "B) R4S",
-            "C) T3U",
-            "D) P5O"
-        ],
-        "answer": "B",
-        "explanation": "Letters alternate between increasing by 2 (K\u2192M\u2192O\u2192Q\u2192R) and decreasing by 1 (R\u2192P). Numbers decrease by 1 each time (9\u21928\u21927\u21926\u21925). The last letter alternates between increasing and decreasing. Hence R4S."
-    },
-    "{\"topic\": \"Series and Patterns/Mixed Series (Alphanumeric)\", \"question\": \"K9L, M8N, O7P, Q6R, _____\", \"choices\": [\"A) S5T\", \"B) R4S\", \"C) T3U\", \"D) P5O\"], \"answer\": \"B\", \"explanation\": \"Letters alternate between increasing by 2 (K\\u2192M\\u2192O\\u2192Q\\u2192R) and decreasing by 1 (R\\u2192P). Numbers decrease by 1 each time (9\\u21928\\u21927\\u21926\\u21925). The last letter alternates between increasing and decreasing. Hence R4S.\"}",
-    {
-        "topic": "Logical Reasoning/Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: No fish is a mammal",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "C",
-        "explanation": "Birds overlap with mammals and reptiles. Reptiles exclude fish, so no fish is a mammal. Both conclusions logically follow."
-    },
-    "{\"topic\": \"Logical Reasoning/Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: No fish is a mammal\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"C\", \"explanation\": \"Birds overlap with mammals and reptiles. Reptiles exclude fish, so no fish is a mammal. Both conclusions logically follow.\"}",
-    {
-        "topic": "Logical Reasoning/Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: No fish is a mammal",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "D",
-        "explanation": "Birds are reptiles, but mammals and birds have no direct overlap. Fish and reptiles are disjoint, but mammals and fish have no direct link."
-    },
-    "{\"topic\": \"Logical Reasoning/Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: No fish is a mammal\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"D\", \"explanation\": \"Birds are reptiles, but mammals and birds have no direct overlap. Fish and reptiles are disjoint, but mammals and fish have no direct link.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, 'The woman in the photo is the daughter of my maternal uncle\u2019s only sibling.\u2019 How is the woman related to Ravi?",
-        "choices": [
-            "A) Cousin",
-            "B) Niece",
-            "C) Sister",
-            "D) Aunt"
-        ],
-        "answer": "C",
-        "explanation": "Ravi's maternal uncle is his aunt's son. The only sibling of the uncle is Ravi's aunt. The daughter of the aunt is Ravi's sister."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, 'The woman in the photo is the daughter of my maternal uncle\\u2019s only sibling.\\u2019 How is the woman related to Ravi?\", \"choices\": [\"A) Cousin\", \"B) Niece\", \"C) Sister\", \"D) Aunt\"], \"answer\": \"C\", \"explanation\": \"Ravi's maternal uncle is his aunt's son. The only sibling of the uncle is Ravi's aunt. The daughter of the aunt is Ravi's sister.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, 'The woman in the photo is the daughter of my maternal uncle\u2019s only child.\u2019 How is the woman related to Ravi?",
-        "choices": [
-            "A) Cousin",
-            "B) Sister",
-            "C) Aunt",
-            "D) Niece"
-        ],
-        "answer": "A",
-        "explanation": "Ravi's maternal uncle is his aunt's brother. The only child of the uncle could be Ravi or his sibling. The woman is the daughter of this only child, making her Ravi's cousin."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, 'The woman in the photo is the daughter of my maternal uncle\\u2019s only child.\\u2019 How is the woman related to Ravi?\", \"choices\": [\"A) Cousin\", \"B) Sister\", \"C) Aunt\", \"D) Niece\"], \"answer\": \"A\", \"explanation\": \"Ravi's maternal uncle is his aunt's brother. The only child of the uncle could be Ravi or his sibling. The woman is the daughter of this only child, making her Ravi's cousin.\"}",
-    {
-        "topic": "Logical Reasoning/Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: No fish is a mammal",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "B",
-        "explanation": "Birds are reptiles, so some mammals (birds) are reptiles. Fish and reptiles are disjoint, so no fish is a mammal."
-    },
-    "{\"topic\": \"Logical Reasoning/Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: No fish is a mammal\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"B\", \"explanation\": \"Birds are reptiles, so some mammals (birds) are reptiles. Fish and reptiles are disjoint, so no fish is a mammal.\"}",
-    {
-        "topic": "Logical Reasoning/Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: No fish is a mammal",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "A",
-        "explanation": "Birds are reptiles, so some mammals (birds) are reptiles. Fish and reptiles are disjoint, so no fish is a mammal."
-    },
-    "{\"topic\": \"Logical Reasoning/Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: No fish is a mammal\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"A\", \"explanation\": \"Birds are reptiles, so some mammals (birds) are reptiles. Fish and reptiles are disjoint, so no fish is a mammal.\"}",
-    {
-        "topic": "Series and Patterns/Mixed Series (Alphanumeric)",
-        "question": "K9L, M8N, O7P, Q6R, _____",
-        "choices": [
-            "A) S5T",
-            "B) R5S",
-            "C) T4U",
-            "D) P4O"
-        ],
-        "answer": "B",
-        "explanation": "First letters: K, M, O, Q, R (skip 2 letters each time). Second letters: L, N, P, R, S (alphabetical). Numbers: 9, 8, 7, 6, 5 (decreasing by 1). Hidden trap: Option D appears plausible but reverses the sequence. Correct answer is R5S."
-    },
-    "{\"topic\": \"Series and Patterns/Mixed Series (Alphanumeric)\", \"question\": \"K9L, M8N, O7P, Q6R, _____\", \"choices\": [\"A) S5T\", \"B) R5S\", \"C) T4U\", \"D) P4O\"], \"answer\": \"B\", \"explanation\": \"First letters: K, M, O, Q, R (skip 2 letters each time). Second letters: L, N, P, R, S (alphabetical). Numbers: 9, 8, 7, 6, 5 (decreasing by 1). Hidden trap: Option D appears plausible but reverses the sequence. Correct answer is R5S.\"}",
-    {
-        "topic": "Series and Patterns/Mixed Series (Alphanumeric)",
-        "question": "K9L, M8N, O7P, Q6R, ______",
-        "choices": [
-            "A) S5T",
-            "B) R4S",
-            "C) P3O",
-            "D) T7U"
-        ],
-        "answer": "A",
-        "explanation": "First letters: K, M, O, Q, S (skip 2 letters). Second letters: L, N, P, R, T (alphabetical). Numbers: 9, 8, 7, 6, 5 (decreasing by 1). Hence S5T."
-    },
-    "{\"topic\": \"Series and Patterns/Mixed Series (Alphanumeric)\", \"question\": \"K9L, M8N, O7P, Q6R, ______\", \"choices\": [\"A) S5T\", \"B) R4S\", \"C) P3O\", \"D) T7U\"], \"answer\": \"A\", \"explanation\": \"First letters: K, M, O, Q, S (skip 2 letters). Second letters: L, N, P, R, T (alphabetical). Numbers: 9, 8, 7, 6, 5 (decreasing by 1). Hence S5T.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Rohan says, 'The woman in the photo is the daughter of my maternal uncle\u2019s only sibling.\u2019 How is the woman related to Rohan?",
-        "choices": [
-            "A) Cousin",
-            "B) Sister",
-            "C) Aunt",
-            "D) Niece"
-        ],
-        "answer": "D",
-        "explanation": "Rohan's maternal uncle is his aunt's son. His maternal uncle's only sibling is Rohan's aunt. The daughter of Rohan's aunt is his niece."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Rohan says, 'The woman in the photo is the daughter of my maternal uncle\\u2019s only sibling.\\u2019 How is the woman related to Rohan?\", \"choices\": [\"A) Cousin\", \"B) Sister\", \"C) Aunt\", \"D) Niece\"], \"answer\": \"D\", \"explanation\": \"Rohan's maternal uncle is his aunt's son. His maternal uncle's only sibling is Rohan's aunt. The daughter of Rohan's aunt is his niece.\"}",
-    {
-        "topic": "Logical Reasoning/Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: No fish is a mammal",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "C",
-        "explanation": "Birds overlap mammals and reptiles. Reptiles exclude fish, so no fish is a mammal. Both conclusions logically follow."
-    },
-    "{\"topic\": \"Logical Reasoning/Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: No fish is a mammal\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"C\", \"explanation\": \"Birds overlap mammals and reptiles. Reptiles exclude fish, so no fish is a mammal. Both conclusions logically follow.\"}"
+  {
+    "topic": "Logical Reasoning/Syllogisms",
+    "question": "Statement I: All roses are flowers. Statement II: Some flowers fade quickly. Conclusion I: Some roses fade quickly. Conclusion II: Some flowers are roses.",
+    "choices": [
+      "A) Only conclusion I follows",
+      "B) Only conclusion II follows",
+      "C) Both conclusions follow",
+      "D) Neither conclusion follows"
+    ],
+    "answer": "B",
+    "explanation": "All roses are flowers does not guarantee roses fade quickly. So conclusion I does not follow. But since all roses are flowers, some flowers must be roses. Therefore only conclusion II follows."
+  },
+  {
+    "topic": "Logical Reasoning/Syllogisms",
+    "question": "Statement I: Some engineers are managers. Statement II: All managers are graduates. Conclusion I: Some engineers are graduates. Conclusion II: All graduates are engineers.",
+    "choices": [
+      "A) Only conclusion I follows",
+      "B) Only conclusion II follows",
+      "C) Both conclusions follow",
+      "D) Neither conclusion follows"
+    ],
+    "answer": "A",
+    "explanation": "Some engineers are managers and all managers are graduates, so those engineers who are managers must be graduates. Conclusion I follows. But we cannot say all graduates are engineers. Conclusion II does not follow."
+  },
+  {
+    "topic": "Blood Relations and Family Tree/Family tree logic",
+    "question": "A is the father of B. C is the sister of B. D is the mother of A. How is D related to C?",
+    "choices": [
+      "A) Mother",
+      "B) Aunt",
+      "C) Grandmother",
+      "D) Sister"
+    ],
+    "answer": "C",
+    "explanation": "A is father of B and C is sister of B, so A is also father of C. D is mother of A, so D is grandmother of C."
+  },
+  {
+    "topic": "Blood Relations and Family Tree/Family tree logic",
+    "question": "Ravi says: 'The man in the photograph is the father of my mother's only son.' How is the man related to Ravi?",
+    "choices": [
+      "A) Brother",
+      "B) Father",
+      "C) Uncle",
+      "D) Grandfather"
+    ],
+    "answer": "B",
+    "explanation": "Mother's only son refers to Ravi himself. The father of Ravi is his father. So the man is Ravi's father."
+  },
+  {
+    "topic": "Puzzles/Seating Arrangements (Linear)",
+    "question": "Five friends A, B, C, D, and E sit in a row. A sits next to B. C is at one end. D sits between B and E. Who sits in the middle?",
+    "choices": [
+      "A) A",
+      "B) B",
+      "C) D",
+      "D) E"
+    ],
+    "answer": "C",
+    "explanation": "Since D sits between B and E, arrangement must be B-D-E or E-D-B. A sits next to B. C is at one end. Final valid arrangement places D in the center."
+  },
+  {
+    "topic": "Logical Reasoning/Series",
+    "question": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+    "choices": [
+      "A) 40",
+      "B) 42",
+      "C) 44",
+      "D) 46"
+    ],
+    "answer": "B",
+    "explanation": "Pattern is n(n+1): 1×2=2, 2×3=6, 3×4=12, 4×5=20, 5×6=30, next is 6×7=42."
+  }
 ]

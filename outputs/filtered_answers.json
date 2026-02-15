@@ -1,0 +1,26 @@
+[
+    {
+        "answer": "B",
+        "reasoning": "Statement I says all roses are flowers. Statement II says some flowers fade quickly. Conclusion I assumes that because all roses are flowers and some flowers fade, some roses fade. This is not necessarily true. Conclusion II states some flowers are roses, which is valid because all roses are flowers, so some flowers must be roses. Thus, only Conclusion II follows."
+    },
+    {
+        "answer": "A",
+        "reasoning": "Statement I says some engineers are managers, and Statement II says all managers are graduates. Therefore, some engineers must be graduates (Conclusion I). However, Conclusion II claims all graduates are engineers, which cannot be inferred from the given statements. Only Conclusion I follows."
+    },
+    {
+        "answer": "C",
+        "reasoning": "D is the mother of A, and A is the father of B. Since C is the sister of B, C is the daughter of A and B's parent. Therefore, D is the grandmother of C."
+    },
+    {
+        "answer": "D",
+        "reasoning": "The man is the father of Ravi's mother's only son. Since Ravi's mother has only one son, that son must be Ravi. Therefore, the man is Ravi's grandfather."
+    },
+    {
+        "answer": "D",
+        "reasoning": "C is at one end, so either position 1 or 5. D is between B and E, so B and E are on either side of D. A is next to B, so A and B are adjacent. If C is at position 1, the order could be C, B, D, E, A. If C is at position 5, the order could be A, B, D, E, C. In both cases, D is in the middle position."
+    },
+    {
+        "answer": "B",
+        "reasoning": "The series follows the pattern of multiplying consecutive integers. The differences between the numbers are 4, 6, 8, 10, indicating an increase of 2 each time. The next difference should be 12, so 30 + 12 = 42. Therefore, the next number is 42."
+    }
+]

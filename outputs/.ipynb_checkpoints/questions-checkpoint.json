@@ -1,314 +1,50 @@
 [
     {
-        "topic": "Syllogisms",
-        "question": "Statement I: Only some books are novels\nStatement II: All novels are fiction\nStatement III: Some fiction is non-fiction\nConclusion I: Some non-fiction is a book\nConclusion II: Some novels are non-fiction",
+        "topic": "Puzzles/Seating Arrangements (Linear, Circular)",
+        "question": "In a circular table seating arrangement, there are seven individuals: R, S, T, U, V, W, X seated clockwise around the table. It is given that R is sitting two seats apart from S, and T is immediately adjacent to both U and V. Additionally, W is directly opposite X, and V is three seats away from W in the clockwise direction. When the following swaps occur: R exchanges places with T, S switches with V, and U trades spots with W, what is the person sitting exactly between V and X after these changes?",
         "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
+            "A) S",
+            "B) U",
+            "C) T",
+            "D) X"
         ],
         "answer": "B",
-        "explanation": "Novels are subset of fiction, and fiction overlaps non-fiction. Conclusion II holds via overlap. Conclusion I requires non-fiction to intersect books, which isn't guaranteed."
+        "explanation": "Initially, based on constraints: W is opposite X \u2192 they are separated by three others. V is three seats clockwise from W \u2192 if W is seat 1, then V is seat 4. Since T is next to both U and V, T and U must be adjacent to V. Given R is two seats from S, possible placements can be deduced. After swaps: R \u2194 T, S \u2194 V, U \u2194 W. This results in new relative positions where U ends up between V and X. Thus, the correct answer is U."
     },
-    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: Only some books are novels\\nStatement II: All novels are fiction\\nStatement III: Some fiction is non-fiction\\nConclusion I: Some non-fiction is a book\\nConclusion II: Some novels are non-fiction\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"B\", \"explanation\": \"Novels are subset of fiction, and fiction overlaps non-fiction. Conclusion II holds via overlap. Conclusion I requires non-fiction to intersect books, which isn't guaranteed.\"}",
     {
-        "topic": "Mixed Series (Alphanumeric)",
-        "question": "K9L8M7N6O5P4Q3R2S1T?U?",
+        "topic": "Puzzles/Seating Arrangements (Linear, Circular)",
+        "question": "In a circular table seating arrangement, there are seven individuals: R, S, T, U, V, W, X seated clockwise around the table. It is given that R is sitting two seats apart from S, and T is immediately adjacent to both U and V. Additionally, W is directly opposite X, and V is three seats away from W in the clockwise direction. When the following swaps occur: R exchanges places with T, S switches with V, and U trades spots with W, what is the person sitting exactly between V and X after these changes?",
         "choices": [
-            "A) U1V0",
-            "B) T0U1",
-            "C) S0T1",
-            "D) R1S0"
-        ],
-        "answer": "A",
-        "explanation": "The sequence alternates between letters and numbers. Letters progress forward in the alphabet: K, L, M, N, O, P, Q, R, S, T, U. Numbers decrease from 9 to 1, then reset to 0. The last pair is T?U?, where ? represents the next number after 1, which is 0. Thus, the correct continuation is U1V0."
-    },
-    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K9L8M7N6O5P4Q3R2S1T?U?\", \"choices\": [\"A) U1V0\", \"B) T0U1\", \"C) S0T1\", \"D) R1S0\"], \"answer\": \"A\", \"explanation\": \"The sequence alternates between letters and numbers. Letters progress forward in the alphabet: K, L, M, N, O, P, Q, R, S, T, U. Numbers decrease from 9 to 1, then reset to 0. The last pair is T?U?, where ? represents the next number after 1, which is 0. Thus, the correct continuation is U1V0.\"}",
-    {
-        "topic": "Seating Arrangements (Linear, Circular)",
-        "question": "Seven friends\u2014A, B, C, D, E, F, G\u2014are seated around a circular table with six chairs, one chair remaining empty. Each person faces the center. A sits two seats away from B, who is adjacent to C. D is directly opposite E, and F is sitting between G and the empty seat. When the empty seat moves clockwise by one position, G ends up directly opposite A. Who was originally sitting next to the empty seat?",
-        "choices": [
-            "A) B and C",
-            "B) C and D",
-            "C) D and E",
-            "D) E and F"
-        ],
-        "answer": "C",
-        "explanation": "Initially, the seating order is A-C-B-G-F-D with the empty seat between D and A. Moving the empty seat clockwise places it between A and C, making D opposite A. Thus, D and E were originally next to the empty seat."
-    },
-    "{\"topic\": \"Seating Arrangements (Linear, Circular)\", \"question\": \"Seven friends\\u2014A, B, C, D, E, F, G\\u2014are seated around a circular table with six chairs, one chair remaining empty. Each person faces the center. A sits two seats away from B, who is adjacent to C. D is directly opposite E, and F is sitting between G and the empty seat. When the empty seat moves clockwise by one position, G ends up directly opposite A. Who was originally sitting next to the empty seat?\", \"choices\": [\"A) B and C\", \"B) C and D\", \"C) D and E\", \"D) E and F\"], \"answer\": \"C\", \"explanation\": \"Initially, the seating order is A-C-B-G-F-D with the empty seat between D and A. Moving the empty seat clockwise places it between A and C, making D opposite A. Thus, D and E were originally next to the empty seat.\"}",
-    {
-        "topic": "Mixed Series (Alphanumeric)",
-        "question": "R3T, S5U, T7V, U9W, ____, ____",
-        "choices": [
-            "A) V11X, W13Y",
-            "B) V11X, X13Z",
-            "C) U11X, V13Y",
-            "D) T11X, U13Y"
+            "A) S",
+            "B) U",
+            "C) T",
+            "D) X"
         ],
         "answer": "B",
-        "explanation": "First letters advance alphabetically R\u2192S\u2192T\u2192U\u2192V\u2192X. Numbers increase by 2: 3\u21925\u21927\u21929\u219211\u219213. Second letters follow alphabetical order T\u2192U\u2192V\u2192W\u2192X\u2192Z. Hence V11X, X13Z."
+        "explanation": "Initially, based on constraints: W is opposite X \u2192 they are separated by three others. V is three seats clockwise from W \u2192 if W is seat 1, then V is seat 4. Since T is next to both U and V, T and U must be adjacent to V. Given R is two seats from S, possible placements can be deduced. After swaps: R \u2194 T, S \u2194 V, U \u2194 W. This results in new relative positions where U ends up between V and X. Thus, the correct answer is U."
     },
-    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"R3T, S5U, T7V, U9W, ____, ____\", \"choices\": [\"A) V11X, W13Y\", \"B) V11X, X13Z\", \"C) U11X, V13Y\", \"D) T11X, U13Y\"], \"answer\": \"B\", \"explanation\": \"First letters advance alphabetically R\\u2192S\\u2192T\\u2192U\\u2192V\\u2192X. Numbers increase by 2: 3\\u21925\\u21927\\u21929\\u219211\\u219213. Second letters follow alphabetical order T\\u2192U\\u2192V\\u2192W\\u2192X\\u2192Z. Hence V11X, X13Z.\"}",
-    {
-        "topic": "Syllogisms",
-        "question": "Statement I: Some metals are conductors\nStatement II: All conductors are insulators\nStatement III: No insulator is a semiconductor\nConclusion I: Some semiconductors are metals\nConclusion II: Some metals are insulators",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "D",
-        "explanation": "Statement II contradicts Statement I. Conductors can't be both metals and insulators. Semiconductors don't overlap with metals or insulators directly."
-    },
-    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: Some metals are conductors\\nStatement II: All conductors are insulators\\nStatement III: No insulator is a semiconductor\\nConclusion I: Some semiconductors are metals\\nConclusion II: Some metals are insulators\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"D\", \"explanation\": \"Statement II contradicts Statement I. Conductors can't be both metals and insulators. Semiconductors don't overlap with metals or insulators directly.\"}",
-    {
-        "topic": "Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: Some fish are mammals",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "D",
-        "explanation": "Statement II contradicts Statement I's premise. Conclusion I requires a bridge between mammals and reptiles, which isn't established. Conclusion II links fish and mammals directly, which is impossible due to statement III. Neither conclusion logically follows."
-    },
-    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: Some fish are mammals\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"D\", \"explanation\": \"Statement II contradicts Statement I's premise. Conclusion I requires a bridge between mammals and reptiles, which isn't established. Conclusion II links fish and mammals directly, which is impossible due to statement III. Neither conclusion logically follows.\"}",
-    {
-        "topic": "Mixed Series (Alphanumeric)",
-        "question": "K9L, M8O, Q7S, U6W, ____, ____",
-        "choices": [
-            "A) Y5Z, X4V",
-            "B) Y5X, V4U",
-            "C) Y5Z, V4U",
-            "D) X4Y, V4U"
-        ],
-        "answer": "C",
-        "explanation": "First letters advance by +2, +4, +6, +8 (K\u2192M\u2192Q\u2192U\u2192Y). Numbers decrease by 1 each time (9\u21928\u21927\u21926\u21925). Second letters skip 2 positions forward (L\u2192O\u2192S\u2192W\u2192Z). Final letters alternate between last letter of previous term and previous letter before that (Z\u2192U\u2192...)."
-    },
-    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K9L, M8O, Q7S, U6W, ____, ____\", \"choices\": [\"A) Y5Z, X4V\", \"B) Y5X, V4U\", \"C) Y5Z, V4U\", \"D) X4Y, V4U\"], \"answer\": \"C\", \"explanation\": \"First letters advance by +2, +4, +6, +8 (K\\u2192M\\u2192Q\\u2192U\\u2192Y). Numbers decrease by 1 each time (9\\u21928\\u21927\\u21926\\u21925). Second letters skip 2 positions forward (L\\u2192O\\u2192S\\u2192W\\u2192Z). Final letters alternate between last letter of previous term and previous letter before that (Z\\u2192U\\u2192...).\"}",
-    {
-        "topic": "Mixed Series (Alphanumeric)",
-        "question": "K9L8M7N6O5P4Q3R2S1T?U?",
-        "choices": [
-            "A) U1V0",
-            "B) T0U1",
-            "C) S0T1",
-            "D) R1S0"
-        ],
-        "answer": "D",
-        "explanation": "The sequence alternates between letters and numbers. Letters advance alphabetically from K to T, then skip to U. Numbers decrease from 9 to 1, then reset to 0. The missing elements are R1 and S0, making D correct."
-    },
-    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K9L8M7N6O5P4Q3R2S1T?U?\", \"choices\": [\"A) U1V0\", \"B) T0U1\", \"C) S0T1\", \"D) R1S0\"], \"answer\": \"D\", \"explanation\": \"The sequence alternates between letters and numbers. Letters advance alphabetically from K to T, then skip to U. Numbers decrease from 9 to 1, then reset to 0. The missing elements are R1 and S0, making D correct.\"}",
-    {
-        "topic": "Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: No mammal is a fish",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "D",
-        "explanation": "Statement II creates a contradiction since birds cannot be both reptiles and non-reptiles. Statement I allows some mammals to be birds, but no definitive link exists between mammals and reptiles. Conclusion II is invalid due to the contradiction in Statement II."
-    },
-    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: No mammal is a fish\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"D\", \"explanation\": \"Statement II creates a contradiction since birds cannot be both reptiles and non-reptiles. Statement I allows some mammals to be birds, but no definitive link exists between mammals and reptiles. Conclusion II is invalid due to the contradiction in Statement II.\"}",
-    {
-        "topic": "Syllogisms",
-        "question": "Statement I: Only some birds are mammals\nStatement II: All mammals are quadrupeds\nStatement III: No quadruped is a reptile\nConclusion I: Some reptiles are birds\nConclusion II: Some mammals are not birds",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "B",
-        "explanation": "Statement II confirms mammals are quadrupeds. Statement III excludes reptiles from quadrupeds, making mammals non-reptiles. Since only some birds are mammals, some mammals are not birds. Conclusion I is invalid due to reversed categories."
-    },
-    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: Only some birds are mammals\\nStatement II: All mammals are quadrupeds\\nStatement III: No quadruped is a reptile\\nConclusion I: Some reptiles are birds\\nConclusion II: Some mammals are not birds\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"B\", \"explanation\": \"Statement II confirms mammals are quadrupeds. Statement III excludes reptiles from quadrupeds, making mammals non-reptiles. Since only some birds are mammals, some mammals are not birds. Conclusion I is invalid due to reversed categories.\"}",
-    {
-        "topic": "Seating Arrangements (Linear, Circular)",
-        "question": "Seven friends\u2014A, B, C, D, E, F, G\u2014are seated around a circular table with six chairs, one chair empty. Each person faces the center. A sits two seats clockwise from G. B is immediately to the left of E. F is sitting between C and D, but not adjacent to them. The empty seat is between D and G. When the empty seat moves two places counterclockwise, who is now directly opposite the original empty seat?",
-        "choices": [
-            "A) A",
-            "B) B",
-            "C) C",
-            "D) D"
-        ],
-        "answer": "C",
-        "explanation": "Initial seating: G, A, F, C, D, B, E (empty between D and G). Moving empty seat two CCW makes it between B and E. Original empty seat was between D and G, now opposite is C."
-    },
-    "{\"topic\": \"Seating Arrangements (Linear, Circular)\", \"question\": \"Seven friends\\u2014A, B, C, D, E, F, G\\u2014are seated around a circular table with six chairs, one chair empty. Each person faces the center. A sits two seats clockwise from G. B is immediately to the left of E. F is sitting between C and D, but not adjacent to them. The empty seat is between D and G. When the empty seat moves two places counterclockwise, who is now directly opposite the original empty seat?\", \"choices\": [\"A) A\", \"B) B\", \"C) C\", \"D) D\"], \"answer\": \"C\", \"explanation\": \"Initial seating: G, A, F, C, D, B, E (empty between D and G). Moving empty seat two CCW makes it between B and E. Original empty seat was between D and G, now opposite is C.\"}",
     {
         "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Rahul states, \u2018Her father is the only son of my maternal uncle.\u2019 She is the daughter of my aunt. How is Rahul related to the woman?",
-        "choices": [
-            "A) Nephew",
-            "B) Cousin",
-            "C) Brother",
-            "D) Uncle"
-        ],
-        "answer": "D",
-        "explanation": "Rahul's maternal uncle is his grandmother's son. Her father being the only son implies he is Rahul's paternal uncle. The woman's father is Rahul's paternal uncle, making her Rahul's cousin. However, since she is described as the daughter of Rahul's aunt, the correct relation is uncle."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Rahul states, \\u2018Her father is the only son of my maternal uncle.\\u2019 She is the daughter of my aunt. How is Rahul related to the woman?\", \"choices\": [\"A) Nephew\", \"B) Cousin\", \"C) Brother\", \"D) Uncle\"], \"answer\": \"D\", \"explanation\": \"Rahul's maternal uncle is his grandmother's son. Her father being the only son implies he is Rahul's paternal uncle. The woman's father is Rahul's paternal uncle, making her Rahul's cousin. However, since she is described as the daughter of Rahul's aunt, the correct relation is uncle.\"}",
-    {
-        "topic": "Syllogisms",
-        "question": "Statement I: Some mammals are reptiles\nStatement II: All reptiles are amphibians\nStatement III: No amphibian is a bird\nConclusion I: Some birds are mammals\nConclusion II: Some mammals are amphibians",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "B",
-        "explanation": "Statement II links reptiles to amphibians, and Statement I connects mammals to reptiles. Thus, some mammals are amphibians. Conclusion I is invalid as no overlap between birds and mammals exists."
-    },
-    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: Some mammals are reptiles\\nStatement II: All reptiles are amphibians\\nStatement III: No amphibian is a bird\\nConclusion I: Some birds are mammals\\nConclusion II: Some mammals are amphibians\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"B\", \"explanation\": \"Statement II links reptiles to amphibians, and Statement I connects mammals to reptiles. Thus, some mammals are amphibians. Conclusion I is invalid as no overlap between birds and mammals exists.\"}",
-    {
-        "topic": "Mixed Series (Alphanumeric)",
-        "question": "K9M, L8N, M7O, N6P, ________",
-        "choices": [
-            "A) O5R",
-            "B) P4S",
-            "C) Q3T",
-            "D) R2U"
-        ],
-        "answer": "C",
-        "explanation": "The first letters advance alphabetically: K\u2192L\u2192M\u2192N\u2192O. The numbers decrease by 1: 9\u21928\u21927\u21926\u21925. The last letters also advance alphabetically: M\u2192N\u2192O\u2192P\u2192Q. The missing term is Q3T."
-    },
-    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K9M, L8N, M7O, N6P, ________\", \"choices\": [\"A) O5R\", \"B) P4S\", \"C) Q3T\", \"D) R2U\"], \"answer\": \"C\", \"explanation\": \"The first letters advance alphabetically: K\\u2192L\\u2192M\\u2192N\\u2192O. The numbers decrease by 1: 9\\u21928\\u21927\\u21926\\u21925. The last letters also advance alphabetically: M\\u2192N\\u2192O\\u2192P\\u2192Q. The missing term is Q3T.\"}",
-    {
-        "topic": "Syllogisms",
-        "question": "Statement I: Some mammals are birds\nStatement II: All birds are reptiles\nStatement III: No reptile is a fish\nConclusion I: Some mammals are reptiles\nConclusion II: Some fish are mammals",
-        "choices": [
-            "A) If only conclusion I follow",
-            "B) If only conclusion II follows",
-            "C) If conclusion I and II both follow",
-            "D) If neither conclusion I nor conclusion II follows"
-        ],
-        "answer": "D",
-        "explanation": "Statement I and II imply some mammals are reptiles. Statement III blocks any connection between fish and mammals. Conclusion II is impossible due to no overlap between fish and mammals."
-    },
-    "{\"topic\": \"Syllogisms\", \"question\": \"Statement I: Some mammals are birds\\nStatement II: All birds are reptiles\\nStatement III: No reptile is a fish\\nConclusion I: Some mammals are reptiles\\nConclusion II: Some fish are mammals\", \"choices\": [\"A) If only conclusion I follow\", \"B) If only conclusion II follows\", \"C) If conclusion I and II both follow\", \"D) If neither conclusion I nor conclusion II follows\"], \"answer\": \"D\", \"explanation\": \"Statement I and II imply some mammals are reptiles. Statement III blocks any connection between fish and mammals. Conclusion II is impossible due to no overlap between fish and mammals.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Rohan states, 'Her father is the only son of my maternal grandmother, and she is the niece of my cousin.' How is Rohan related to the woman?",
-        "choices": [
-            "A) Brother",
-            "B) Uncle",
-            "C) Cousin",
-            "D) Nephew"
-        ],
-        "answer": "D",
-        "explanation": "Rohan's maternal grandmother's only son is Rohan's uncle. The woman is the niece of Rohan's cousin, making her Rohan's cousin's niece. Thus, Rohan is the nephew of the woman."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Rohan states, 'Her father is the only son of my maternal grandmother, and she is the niece of my cousin.' How is Rohan related to the woman?\", \"choices\": [\"A) Brother\", \"B) Uncle\", \"C) Cousin\", \"D) Nephew\"], \"answer\": \"D\", \"explanation\": \"Rohan's maternal grandmother's only son is Rohan's uncle. The woman is the niece of Rohan's cousin, making her Rohan's cousin's niece. Thus, Rohan is the nephew of the woman.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, 'Her father is the only son of my mother\u2019s brother.\u2019 How is Ravi related to the woman?",
-        "choices": [
-            "A) Brother",
-            "B) Cousin",
-            "C) Nephew",
-            "D) Uncle"
-        ],
-        "answer": "B",
-        "explanation": "Ravi's mother's brother is his maternal uncle. The woman's father is the only son of this uncle, making him the woman's father. Thus, Ravi is the cousin of the woman."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, 'Her father is the only son of my mother\\u2019s brother.\\u2019 How is Ravi related to the woman?\", \"choices\": [\"A) Brother\", \"B) Cousin\", \"C) Nephew\", \"D) Uncle\"], \"answer\": \"B\", \"explanation\": \"Ravi's mother's brother is his maternal uncle. The woman's father is the only son of this uncle, making him the woman's father. Thus, Ravi is the cousin of the woman.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, \"My mother\u2019s brother\u2019s only child\u2019s daughter is the aunt of my cousin\u2019s son.\" Who is the aunt in relation to Ravi?",
-        "choices": [
-            "A) Maternal grandmother",
-            "B) Paternal uncle",
-            "C) Cousin",
-            "D) Niece"
-        ],
-        "answer": "A",
-        "explanation": "Ravi's mother's brother is Ravi's maternal uncle. His only child is Ravi's maternal aunt or uncle. The daughter of this child is Ravi's cousin. This cousin's son is Ravi's cousin's son. The aunt being the daughter of Ravi's maternal uncle makes her Ravi's maternal grandmother."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, \\\"My mother\\u2019s brother\\u2019s only child\\u2019s daughter is the aunt of my cousin\\u2019s son.\\\" Who is the aunt in relation to Ravi?\", \"choices\": [\"A) Maternal grandmother\", \"B) Paternal uncle\", \"C) Cousin\", \"D) Niece\"], \"answer\": \"A\", \"explanation\": \"Ravi's mother's brother is Ravi's maternal uncle. His only child is Ravi's maternal aunt or uncle. The daughter of this child is Ravi's cousin. This cousin's son is Ravi's cousin's son. The aunt being the daughter of Ravi's maternal uncle makes her Ravi's maternal grandmother.\"}",
-    {
-        "topic": "Mixed Series (Alphanumeric)",
-        "question": "K9L8M7N6O5P4R3S2T1U?V?W?X?",
-        "choices": [
-            "A) U4V3W2X1",
-            "B) U5V4W3X2",
-            "C) U6V5W4X3",
-            "D) U7V6W5X4"
-        ],
-        "answer": "D",
-        "explanation": "The sequence alternates between decreasing letters and numbers. Letters go K-L-M-N-O-P-R-S-T-U-V-W-X. Numbers decrease from 9-8-7-6-5-4-3-2-1. Missing numbers after 1 are 7-6-5-4. Hence U7V6W5X4."
-    },
-    "{\"topic\": \"Mixed Series (Alphanumeric)\", \"question\": \"K9L8M7N6O5P4R3S2T1U?V?W?X?\", \"choices\": [\"A) U4V3W2X1\", \"B) U5V4W3X2\", \"C) U6V5W4X3\", \"D) U7V6W5X4\"], \"answer\": \"D\", \"explanation\": \"The sequence alternates between decreasing letters and numbers. Letters go K-L-M-N-O-P-R-S-T-U-V-W-X. Numbers decrease from 9-8-7-6-5-4-3-2-1. Missing numbers after 1 are 7-6-5-4. Hence U7V6W5X4.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Rahul says, \u2018Her father is the only son of my maternal grandmother.\u2019 She is the daughter of my paternal uncle.\u2019 How is Rahul related to the woman?",
-        "choices": [
-            "A) Cousin",
-            "B) Nephew",
-            "C) Brother",
-            "D) Uncles"
-        ],
-        "answer": "C",
-        "explanation": "Rahul's maternal grandmother's only son is Rahul's uncle. The woman's father is this uncle, making her Rahul's cousin. However, the second statement implies she is the daughter of Rahul's paternal uncle, making her his cousin. But since the first part states the woman's father is Rahul's uncle, and the second confirms she is the daughter of his paternal uncle, the only consistent relationship is that Rahul is her brother."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Rahul says, \\u2018Her father is the only son of my maternal grandmother.\\u2019 She is the daughter of my paternal uncle.\\u2019 How is Rahul related to the woman?\", \"choices\": [\"A) Cousin\", \"B) Nephew\", \"C) Brother\", \"D) Uncles\"], \"answer\": \"C\", \"explanation\": \"Rahul's maternal grandmother's only son is Rahul's uncle. The woman's father is this uncle, making her Rahul's cousin. However, the second statement implies she is the daughter of Rahul's paternal uncle, making her his cousin. But since the first part states the woman's father is Rahul's uncle, and the second confirms she is the daughter of his paternal uncle, the only consistent relationship is that Rahul is her brother.\"}",
-    {
-        "topic": "Seating Arrangements (Linear, Circular)",
-        "question": "Seven friends\u2014A, B, C, D, E, F, G\u2014are seated around a circular table with six seats, one seat remaining unoccupied. Each person faces the center. A is sitting two seats apart from B, who is adjacent to C. D is directly opposite E, and F is immediately next to G. After rearranging, A moves three seats clockwise, B moves two seats counterclockwise, C stays put, D swaps places with G, E moves one seat clockwise, and F moves four seats counterclockwise. Who is now sitting between A and E?",
-        "choices": [
-            "A) C",
-            "B) D",
-            "C) F",
-            "D) G"
-        ],
-        "answer": "B",
-        "explanation": "Initial seating: A-C-B-G-F-E-D (with one seat empty). After movements: A moves to position 4, E moves to 6. Between them is D."
-    },
-    "{\"topic\": \"Seating Arrangements (Linear, Circular)\", \"question\": \"Seven friends\\u2014A, B, C, D, E, F, G\\u2014are seated around a circular table with six seats, one seat remaining unoccupied. Each person faces the center. A is sitting two seats apart from B, who is adjacent to C. D is directly opposite E, and F is immediately next to G. After rearranging, A moves three seats clockwise, B moves two seats counterclockwise, C stays put, D swaps places with G, E moves one seat clockwise, and F moves four seats counterclockwise. Who is now sitting between A and E?\", \"choices\": [\"A) C\", \"B) D\", \"C) F\", \"D) G\"], \"answer\": \"B\", \"explanation\": \"Initial seating: A-C-B-G-F-E-D (with one seat empty). After movements: A moves to position 4, E moves to 6. Between them is D.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, 'Her mother is the daughter of my grandmother, but she is not my aunt.' How is Ravi related to the woman?",
-        "choices": [
-            "A) Brother",
-            "B) Son",
-            "C) Nephew",
-            "D) Cousin"
-        ],
-        "answer": "B",
-        "explanation": "Ravi's grandmother has a daughter who is not his aunt, so the woman is Ravi's cousin. However, since the woman is not his aunt, she must be his mother's sibling's child, making her his cousin. But if the woman is not his aunt, she cannot be his mother's daughter, so she must be his son."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, 'Her mother is the daughter of my grandmother, but she is not my aunt.' How is Ravi related to the woman?\", \"choices\": [\"A) Brother\", \"B) Son\", \"C) Nephew\", \"D) Cousin\"], \"answer\": \"B\", \"explanation\": \"Ravi's grandmother has a daughter who is not his aunt, so the woman is Ravi's cousin. However, since the woman is not his aunt, she must be his mother's sibling's child, making her his cousin. But if the woman is not his aunt, she cannot be his mother's daughter, so she must be his son.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, \"My uncle\u2019s only sibling\u2019s daughter is the aunt of my cousin\u2019s son.\" How is Ravi related to the person mentioned in the statement?",
-        "choices": [
-            "A) Nephew",
-            "B) Cousin",
-            "C) Son",
-            "D) Grandson"
-        ],
-        "answer": "C",
-        "explanation": "Ravi's uncle's only sibling is Ravi's aunt. Her daughter is Ravi's aunt's daughter, making her Ravi's cousin. This cousin's son is Ravi's cousin's son. Thus, Ravi is the son of the cousin's parent, making him the son of Ravi's cousin's parent, hence Ravi is the son of the cousin's parent, so he is the son of the cousin's parent, making him the son of the cousin's parent, hence Ravi is the son."
-    },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, \\\"My uncle\\u2019s only sibling\\u2019s daughter is the aunt of my cousin\\u2019s son.\\\" How is Ravi related to the person mentioned in the statement?\", \"choices\": [\"A) Nephew\", \"B) Cousin\", \"C) Son\", \"D) Grandson\"], \"answer\": \"C\", \"explanation\": \"Ravi's uncle's only sibling is Ravi's aunt. Her daughter is Ravi's aunt's daughter, making her Ravi's cousin. This cousin's son is Ravi's cousin's son. Thus, Ravi is the son of the cousin's parent, making him the son of Ravi's cousin's parent, hence Ravi is the son of the cousin's parent, so he is the son of the cousin's parent, making him the son of the cousin's parent, hence Ravi is the son.\"}",
-    {
-        "topic": "Blood Relations and Family Tree/Family tree logic",
-        "question": "Ravi says, \u2018The lady in the photograph is the only child of my maternal uncle\u2019s daughter.\u2019 How is the lady related to Ravi?",
+        "question": "Rohan tells his friend that \u2018the person who is sitting next to me is the only child of my maternal uncle\u2019s daughter.\u2019 How is this person related to Rohan?",
         "choices": [
             "A) Niece",
             "B) Cousin",
             "C) Sister",
-            "D) Daughter"
+            "D) Aunt"
         ],
         "answer": "B",
-        "explanation": "Ravi's maternal uncle is his aunt's husband. His maternal uncle's daughter is Ravi's cousin. The lady being the only child of this cousin makes her Ravi's cousin."
+        "explanation": "Rohan\u2019s maternal uncle is the brother of Rohan\u2019s mother. His daughter would be Rohan\u2019s aunt. The only child of Rohan\u2019s aunt is either Rohan\u2019s cousin (if the aunt has another child) or Rohan\u2019s sibling (if she is the only child). However, since the statement specifies \u2018the only child,\u2019 and the person is described as sitting next to Rohan, they cannot be Rohan\u2019s sibling because siblings are not typically referred to as \u2018sitting next to\u2019 someone in such contexts. Thus, the person must be Rohan\u2019s cousin. This makes option B the correct answer. Options A, C, and D introduce misleading relationships based on direct family terms without considering the indirect reference through the maternal uncle\u2019s daughter."
     },
-    "{\"topic\": \"Blood Relations and Family Tree/Family tree logic\", \"question\": \"Ravi says, \\u2018The lady in the photograph is the only child of my maternal uncle\\u2019s daughter.\\u2019 How is the lady related to Ravi?\", \"choices\": [\"A) Niece\", \"B) Cousin\", \"C) Sister\", \"D) Daughter\"], \"answer\": \"B\", \"explanation\": \"Ravi's maternal uncle is his aunt's husband. His maternal uncle's daughter is Ravi's cousin. The lady being the only child of this cousin makes her Ravi's cousin.\"}"
+    {
+        "topic": "Blood Relations and Family Tree/Family tree logic",
+        "question": "Rohan tells his friend that \u2018the person who is sitting next to me is the only child of my maternal uncle\u2019s daughter.\u2019 How is this person related to Rohan?",
+        "choices": [
+            "A) Niece",
+            "B) Cousin",
+            "C) Sister",
+            "D) Aunt"
+        ],
+        "answer": "B",
+        "explanation": "Rohan\u2019s maternal uncle is the brother of Rohan\u2019s mother. His daughter would be Rohan\u2019s aunt. The only child of Rohan\u2019s aunt is either Rohan\u2019s cousin (if the aunt has another child) or Rohan\u2019s sibling (if she is the only child). However, since the statement specifies \u2018the only child,\u2019 and the person is described as sitting next to Rohan, they cannot be Rohan\u2019s sibling because siblings are not typically referred to as \u2018sitting next to\u2019 someone in such contexts. Thus, the person must be Rohan\u2019s cousin. This makes option B the correct answer. Options A, C, and D introduce misleading relationships based on direct family terms without considering the indirect reference through the maternal uncle\u2019s daughter."
+    }
 ]
