@@ -69,7 +69,12 @@ class QuestioningAgent(object):
             "Generate an EXTREMELY DIFFICULT MCQ on topic: {0}.\n\n"
             "**CRITICAL REQUIREMENTS:**\n"
             '1.  **Topic Alignment**: The "question" must be strictly relevant to the topic: {1}.\n'
-            "2.  **Question Quality**: The question must be EXTREMELY DIFFICULT, require multi-step reasoning, avoid surface-level pattern detection, and include hidden logical traps that can mislead non-experts. Avoid trivial or ambiguous questions.\n"
+            "2.  **Question Quality**: The question must be EXTREMELY DIFFICULT.\n"
+            "    - The question must require at least 3 logical inference steps.\n"
+            "    - Avoid direct pattern recognition.\n"
+            "    - Include hidden traps.\n"
+            "    - Avoid common textbook examples.\n"
+            "    - Do not reuse standard structures.\n"
 
             
             '3.  **Choices (4 total)**: Generate exactly FOUR multiple-choice options, labeled "A)", "B)", "C)", and "D)".\n'
@@ -98,6 +103,20 @@ class QuestioningAgent(object):
             inc_samples_ex = self.build_inc_samples(inc_samples, topic)
         else:
             inc_samples_ex = ""
+            # ------------------------------
+# 🔥 Topic-Specific Strengthening
+# ------------------------------
+        if "Syllogism" in topic:
+            extra_rules = "Use 3–4 layered logical statements with quantifier traps."
+        elif "Family" in topic:
+            extra_rules = "Use at least 3 generations and indirect references."
+        elif "Seating" in topic:
+            extra_rules = "Use 7-8 people with movement and re-arrangement."
+        elif "Series" in topic:
+            extra_rules = "Use multi-dimensional pattern (letters + numbers + skipping)."
+        else:
+            extra_rules = ""
+
         prompt = tmpl.format(
             topic,
             topic,
@@ -196,6 +215,7 @@ class QuestioningAgent(object):
             gts.append(gt)
             pbar.update(1)
         pbar.close()
+        questions = list(dict.fromkeys(questions))
         return questions, tls, gts
 
     def count_tokens_q(self, text: str) -> int:

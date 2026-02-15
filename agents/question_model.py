@@ -49,6 +49,14 @@ class QAgent(object):
                     cleaned = re.sub(r'^([A-D]\))\s*\1', r'\1', choice)
                     cleaned_choices.append(cleaned)
                 parsed["choices"] = cleaned_choices
+            valid_options = ["A", "B", "C", "D"]
+            if parsed["answer"] not in valid_options:
+                return None
+            answer_letter = parsed["answer"]
+            if not any(choice.startswith(f"{answer_letter})") for choice in parsed["choices"]):
+                return None
+            if not parsed["explanation"] or len(parsed["explanation"]) < 10:
+                return None
 
             return parsed
 
@@ -65,11 +73,14 @@ class QAgent(object):
 
         if system_prompt is None:
             system_prompt = (
-                "Generate ONE logical reasoning MCQ in strict JSON format. "
-                "Return ONLY a valid JSON object with keys: "
-                "topic, question, choices, answer, explanation. "
-                "Each choice must start with A), B), C), or D). "
-                "Answer must be A, B, C, or D."
+                "You are a strict competitive exam question setter.\n"
+                "Return ONLY a valid JSON object.\n"
+                "Ensure logical correctness.\n"
+                "Ensure explanation matches answer exactly.\n"
+                "Do NOT contradict yourself.\n"
+                "No repeated choices.\n"
+                "No duplicate options.\n"
+
             )
 
         if isinstance(message, str):
@@ -105,10 +116,11 @@ class QAgent(object):
 
         generated_ids = self.model.generate(
             **model_inputs,
-            max_new_tokens= 200,
-            temperature=0.6,
-            top_p=0.9,
-            do_sample=True,
+            max_new_tokens= 220,
+            temperature=kwargs.get("temperature", 0.7),
+            top_p=kwargs.get("top_p", 0.9),
+            repetition_penalty=kwargs.get("repetition_penalty", 1.1),
+            do_sample=kwargs.get("do_sample", True),
             pad_token_id=self.tokenizer.pad_token_id,
         )
 
